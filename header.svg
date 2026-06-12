@@ -1,199 +1,352 @@
-<svg width="800" height="320" viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#08080f"/>
-      <stop offset="50%" style="stop-color:#0d0d1e"/>
-      <stop offset="100%" style="stop-color:#080812"/>
-    </linearGradient>
-    <linearGradient id="topBorder" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:transparent"/>
-      <stop offset="20%" style="stop-color:#F7DF1E"/>
-      <stop offset="50%" style="stop-color:#7B61FF"/>
-      <stop offset="80%" style="stop-color:#FF6B6B"/>
-      <stop offset="100%" style="stop-color:transparent"/>
-    </linearGradient>
-    <linearGradient id="jGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#ffe94d"/>
-      <stop offset="45%" style="stop-color:#F7DF1E"/>
-      <stop offset="100%" style="stop-color:#b8a200"/>
-    </linearGradient>
-    <linearGradient id="wGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#ffffff"/>
-      <stop offset="40%" style="stop-color:#e0e0ff"/>
-      <stop offset="100%" style="stop-color:#9090cc"/>
-    </linearGradient>
-    <linearGradient id="scanGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#F7DF1E;stop-opacity:0"/>
-      <stop offset="50%" style="stop-color:#F7DF1E;stop-opacity:0.04"/>
-      <stop offset="100%" style="stop-color:#F7DF1E;stop-opacity:0"/>
-    </linearGradient>
-    <radialGradient id="topGlow" cx="50%" cy="0%" r="65%">
-      <stop offset="0%" style="stop-color:#F7DF1E;stop-opacity:0.09"/>
-      <stop offset="100%" style="stop-color:#000000;stop-opacity:0"/>
-    </radialGradient>
-    <filter id="blur1">
-      <feGaussianBlur stdDeviation="1.5"/>
-    </filter>
-  </defs>
+<svg width="860" height="480" viewBox="0 0 860 480" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="bgG" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+    <stop offset="0%" stop-color="#05050d"/>
+    <stop offset="50%" stop-color="#08081a"/>
+    <stop offset="100%" stop-color="#050510"/>
+  </linearGradient>
+  <linearGradient id="topBorder" x1="0" y1="0" x2="1" y2="0" gradientUnits="objectBoundingBox">
+    <stop offset="0%" stop-color="#05050d" stop-opacity="0"/>
+    <stop offset="15%" stop-color="#F7DF1E"/>
+    <stop offset="38%" stop-color="#9370FF"/>
+    <stop offset="62%" stop-color="#FF5A5A"/>
+    <stop offset="82%" stop-color="#00FF88"/>
+    <stop offset="100%" stop-color="#05050d" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="jGrad" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+    <stop offset="0%" stop-color="#fff5a0"/>
+    <stop offset="30%" stop-color="#F7DF1E"/>
+    <stop offset="70%" stop-color="#d4b800"/>
+    <stop offset="100%" stop-color="#a08800"/>
+  </linearGradient>
+  <linearGradient id="wGrad" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+    <stop offset="0%" stop-color="#ffffff"/>
+    <stop offset="35%" stop-color="#e4e4ff"/>
+    <stop offset="70%" stop-color="#b0b0ee"/>
+    <stop offset="100%" stop-color="#7070bb"/>
+  </linearGradient>
+  <linearGradient id="divGrad" x1="0" y1="0" x2="1" y2="0" gradientUnits="objectBoundingBox">
+    <stop offset="0%" stop-color="#9370FF" stop-opacity="0"/>
+    <stop offset="25%" stop-color="#9370FF" stop-opacity="0.4"/>
+    <stop offset="50%" stop-color="#F7DF1E" stop-opacity="0.5"/>
+    <stop offset="75%" stop-color="#FF5A5A" stop-opacity="0.4"/>
+    <stop offset="100%" stop-color="#FF5A5A" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="scanG" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+    <stop offset="0%" stop-color="#F7DF1E" stop-opacity="0"/>
+    <stop offset="50%" stop-color="#F7DF1E" stop-opacity="0.025"/>
+    <stop offset="100%" stop-color="#F7DF1E" stop-opacity="0"/>
+  </linearGradient>
+  <radialGradient id="orb1" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#9370FF" stop-opacity="0.1"/>
+    <stop offset="100%" stop-color="#9370FF" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="orb2" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#F7DF1E" stop-opacity="0.09"/>
+    <stop offset="100%" stop-color="#F7DF1E" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="orb3" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#FF5A5A" stop-opacity="0.07"/>
+    <stop offset="100%" stop-color="#FF5A5A" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="orb4" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#00FF88" stop-opacity="0.07"/>
+    <stop offset="100%" stop-color="#00FF88" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="jsGlow" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#F7DF1E" stop-opacity="0.18"/>
+    <stop offset="100%" stop-color="#F7DF1E" stop-opacity="0"/>
+  </radialGradient>
+  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="3" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="softglow" x="-30%" y="-30%" width="160%" height="160%">
+    <feGaussianBlur stdDeviation="2"/>
+  </filter>
+  <clipPath id="mainClip">
+    <rect width="{W}" height="{H}" rx="22"/>
+  </clipPath>
+</defs>
+<rect width="860" height="480" fill="url(#bgG)" rx="22"/>
+<g clip-path="url(#mainClip)">
 
-  <!-- Background -->
-  <rect width="800" height="320" fill="url(#bgGrad)" rx="16"/>
+  <ellipse cx="140" cy="130" rx="160" ry="140" fill="url(#orb1)" opacity="0.9">
+    <animateTransform attributeName="transform" type="translate" values="0,0;25,18;-10,25;0,0" dur="12s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </ellipse>
+  <ellipse cx="720" cy="100" rx="170" ry="145" fill="url(#orb2)" opacity="0.9">
+    <animateTransform attributeName="transform" type="translate" values="0,0;-20,22;15,-18;0,0" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </ellipse>
+  <ellipse cx="430" cy="380" rx="180" ry="120" fill="url(#orb3)" opacity="0.8">
+    <animateTransform attributeName="transform" type="translate" values="0,0;18,-15;-22,10;0,0" dur="16s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+  </ellipse>
+  <ellipse cx="80" cy="390" rx="120" ry="110" fill="url(#orb4)" opacity="0.8">
+    <animateTransform attributeName="transform" type="translate" values="0,0;20,12;-8,-20;0,0" dur="10s" repeatCount="indefinite"/>
+  </ellipse>
+  <ellipse cx="790" cy="380" rx="130" ry="115" fill="url(#orb4)" opacity="0.6">
+    <animateTransform attributeName="transform" type="translate" values="0,0;-15,20;10,-15;0,0" dur="13s" repeatCount="indefinite"/>
+  </ellipse>
 
-  <!-- Dot grid -->
-  <g opacity="0.045" fill="#F7DF1E">
-    <circle cx="28" cy="28" r="1"/><circle cx="56" cy="28" r="1"/><circle cx="84" cy="28" r="1"/><circle cx="112" cy="28" r="1"/><circle cx="140" cy="28" r="1"/><circle cx="168" cy="28" r="1"/><circle cx="196" cy="28" r="1"/><circle cx="224" cy="28" r="1"/><circle cx="252" cy="28" r="1"/><circle cx="280" cy="28" r="1"/><circle cx="308" cy="28" r="1"/><circle cx="336" cy="28" r="1"/><circle cx="364" cy="28" r="1"/><circle cx="392" cy="28" r="1"/><circle cx="420" cy="28" r="1"/><circle cx="448" cy="28" r="1"/><circle cx="476" cy="28" r="1"/><circle cx="504" cy="28" r="1"/><circle cx="532" cy="28" r="1"/><circle cx="560" cy="28" r="1"/><circle cx="588" cy="28" r="1"/><circle cx="616" cy="28" r="1"/><circle cx="644" cy="28" r="1"/><circle cx="672" cy="28" r="1"/><circle cx="700" cy="28" r="1"/><circle cx="728" cy="28" r="1"/><circle cx="756" cy="28" r="1"/><circle cx="784" cy="28" r="1"/>
-    <circle cx="28" cy="56" r="1"/><circle cx="56" cy="56" r="1"/><circle cx="84" cy="56" r="1"/><circle cx="112" cy="56" r="1"/><circle cx="140" cy="56" r="1"/><circle cx="168" cy="56" r="1"/><circle cx="196" cy="56" r="1"/><circle cx="224" cy="56" r="1"/><circle cx="252" cy="56" r="1"/><circle cx="280" cy="56" r="1"/><circle cx="308" cy="56" r="1"/><circle cx="336" cy="56" r="1"/><circle cx="364" cy="56" r="1"/><circle cx="392" cy="56" r="1"/><circle cx="420" cy="56" r="1"/><circle cx="448" cy="56" r="1"/><circle cx="476" cy="56" r="1"/><circle cx="504" cy="56" r="1"/><circle cx="532" cy="56" r="1"/><circle cx="560" cy="56" r="1"/><circle cx="588" cy="56" r="1"/><circle cx="616" cy="56" r="1"/><circle cx="644" cy="56" r="1"/><circle cx="672" cy="56" r="1"/><circle cx="700" cy="56" r="1"/><circle cx="728" cy="56" r="1"/><circle cx="756" cy="56" r="1"/><circle cx="784" cy="56" r="1"/>
-    <circle cx="28" cy="84" r="1"/><circle cx="56" cy="84" r="1"/><circle cx="84" cy="84" r="1"/><circle cx="112" cy="84" r="1"/><circle cx="140" cy="84" r="1"/><circle cx="168" cy="84" r="1"/><circle cx="196" cy="84" r="1"/><circle cx="224" cy="84" r="1"/><circle cx="252" cy="84" r="1"/><circle cx="280" cy="84" r="1"/><circle cx="308" cy="84" r="1"/><circle cx="336" cy="84" r="1"/><circle cx="364" cy="84" r="1"/><circle cx="392" cy="84" r="1"/><circle cx="420" cy="84" r="1"/><circle cx="448" cy="84" r="1"/><circle cx="476" cy="84" r="1"/><circle cx="504" cy="84" r="1"/><circle cx="532" cy="84" r="1"/><circle cx="560" cy="84" r="1"/><circle cx="588" cy="84" r="1"/><circle cx="616" cy="84" r="1"/><circle cx="644" cy="84" r="1"/><circle cx="672" cy="84" r="1"/><circle cx="700" cy="84" r="1"/><circle cx="728" cy="84" r="1"/><circle cx="756" cy="84" r="1"/><circle cx="784" cy="84" r="1"/>
-    <circle cx="28" cy="112" r="1"/><circle cx="56" cy="112" r="1"/><circle cx="84" cy="112" r="1"/><circle cx="112" cy="112" r="1"/><circle cx="140" cy="112" r="1"/><circle cx="168" cy="112" r="1"/><circle cx="196" cy="112" r="1"/><circle cx="224" cy="112" r="1"/><circle cx="252" cy="112" r="1"/><circle cx="280" cy="112" r="1"/><circle cx="308" cy="112" r="1"/><circle cx="336" cy="112" r="1"/><circle cx="364" cy="112" r="1"/><circle cx="392" cy="112" r="1"/><circle cx="420" cy="112" r="1"/><circle cx="448" cy="112" r="1"/><circle cx="476" cy="112" r="1"/><circle cx="504" cy="112" r="1"/><circle cx="532" cy="112" r="1"/><circle cx="560" cy="112" r="1"/><circle cx="588" cy="112" r="1"/><circle cx="616" cy="112" r="1"/><circle cx="644" cy="112" r="1"/><circle cx="672" cy="112" r="1"/><circle cx="700" cy="112" r="1"/><circle cx="728" cy="112" r="1"/><circle cx="756" cy="112" r="1"/><circle cx="784" cy="112" r="1"/>
-    <circle cx="28" cy="140" r="1"/><circle cx="56" cy="140" r="1"/><circle cx="84" cy="140" r="1"/><circle cx="112" cy="140" r="1"/><circle cx="140" cy="140" r="1"/><circle cx="168" cy="140" r="1"/><circle cx="196" cy="140" r="1"/><circle cx="224" cy="140" r="1"/><circle cx="252" cy="140" r="1"/><circle cx="280" cy="140" r="1"/><circle cx="308" cy="140" r="1"/><circle cx="336" cy="140" r="1"/><circle cx="364" cy="140" r="1"/><circle cx="392" cy="140" r="1"/><circle cx="420" cy="140" r="1"/><circle cx="448" cy="140" r="1"/><circle cx="476" cy="140" r="1"/><circle cx="504" cy="140" r="1"/><circle cx="532" cy="140" r="1"/><circle cx="560" cy="140" r="1"/><circle cx="588" cy="140" r="1"/><circle cx="616" cy="140" r="1"/><circle cx="644" cy="140" r="1"/><circle cx="672" cy="140" r="1"/><circle cx="700" cy="140" r="1"/><circle cx="728" cy="140" r="1"/><circle cx="756" cy="140" r="1"/><circle cx="784" cy="140" r="1"/>
-    <circle cx="28" cy="168" r="1"/><circle cx="56" cy="168" r="1"/><circle cx="84" cy="168" r="1"/><circle cx="112" cy="168" r="1"/><circle cx="140" cy="168" r="1"/><circle cx="168" cy="168" r="1"/><circle cx="196" cy="168" r="1"/><circle cx="224" cy="168" r="1"/><circle cx="252" cy="168" r="1"/><circle cx="280" cy="168" r="1"/><circle cx="308" cy="168" r="1"/><circle cx="336" cy="168" r="1"/><circle cx="364" cy="168" r="1"/><circle cx="392" cy="168" r="1"/><circle cx="420" cy="168" r="1"/><circle cx="448" cy="168" r="1"/><circle cx="476" cy="168" r="1"/><circle cx="504" cy="168" r="1"/><circle cx="532" cy="168" r="1"/><circle cx="560" cy="168" r="1"/><circle cx="588" cy="168" r="1"/><circle cx="616" cy="168" r="1"/><circle cx="644" cy="168" r="1"/><circle cx="672" cy="168" r="1"/><circle cx="700" cy="168" r="1"/><circle cx="728" cy="168" r="1"/><circle cx="756" cy="168" r="1"/><circle cx="784" cy="168" r="1"/>
-    <circle cx="28" cy="196" r="1"/><circle cx="56" cy="196" r="1"/><circle cx="84" cy="196" r="1"/><circle cx="112" cy="196" r="1"/><circle cx="140" cy="196" r="1"/><circle cx="168" cy="196" r="1"/><circle cx="196" cy="196" r="1"/><circle cx="224" cy="196" r="1"/><circle cx="252" cy="196" r="1"/><circle cx="280" cy="196" r="1"/><circle cx="308" cy="196" r="1"/><circle cx="336" cy="196" r="1"/><circle cx="364" cy="196" r="1"/><circle cx="392" cy="196" r="1"/><circle cx="420" cy="196" r="1"/><circle cx="448" cy="196" r="1"/><circle cx="476" cy="196" r="1"/><circle cx="504" cy="196" r="1"/><circle cx="532" cy="196" r="1"/><circle cx="560" cy="196" r="1"/><circle cx="588" cy="196" r="1"/><circle cx="616" cy="196" r="1"/><circle cx="644" cy="196" r="1"/><circle cx="672" cy="196" r="1"/><circle cx="700" cy="196" r="1"/><circle cx="728" cy="196" r="1"/><circle cx="756" cy="196" r="1"/><circle cx="784" cy="196" r="1"/>
-    <circle cx="28" cy="224" r="1"/><circle cx="56" cy="224" r="1"/><circle cx="84" cy="224" r="1"/><circle cx="112" cy="224" r="1"/><circle cx="140" cy="224" r="1"/><circle cx="168" cy="224" r="1"/><circle cx="196" cy="224" r="1"/><circle cx="224" cy="224" r="1"/><circle cx="252" cy="224" r="1"/><circle cx="280" cy="224" r="1"/><circle cx="308" cy="224" r="1"/><circle cx="336" cy="224" r="1"/><circle cx="364" cy="224" r="1"/><circle cx="392" cy="224" r="1"/><circle cx="420" cy="224" r="1"/><circle cx="448" cy="224" r="1"/><circle cx="476" cy="224" r="1"/><circle cx="504" cy="224" r="1"/><circle cx="532" cy="224" r="1"/><circle cx="560" cy="224" r="1"/><circle cx="588" cy="224" r="1"/><circle cx="616" cy="224" r="1"/><circle cx="644" cy="224" r="1"/><circle cx="672" cy="224" r="1"/><circle cx="700" cy="224" r="1"/><circle cx="728" cy="224" r="1"/><circle cx="756" cy="224" r="1"/><circle cx="784" cy="224" r="1"/>
-    <circle cx="28" cy="252" r="1"/><circle cx="56" cy="252" r="1"/><circle cx="84" cy="252" r="1"/><circle cx="112" cy="252" r="1"/><circle cx="140" cy="252" r="1"/><circle cx="168" cy="252" r="1"/><circle cx="196" cy="252" r="1"/><circle cx="224" cy="252" r="1"/><circle cx="252" cy="252" r="1"/><circle cx="280" cy="252" r="1"/><circle cx="308" cy="252" r="1"/><circle cx="336" cy="252" r="1"/><circle cx="364" cy="252" r="1"/><circle cx="392" cy="252" r="1"/><circle cx="420" cy="252" r="1"/><circle cx="448" cy="252" r="1"/><circle cx="476" cy="252" r="1"/><circle cx="504" cy="252" r="1"/><circle cx="532" cy="252" r="1"/><circle cx="560" cy="252" r="1"/><circle cx="588" cy="252" r="1"/><circle cx="616" cy="252" r="1"/><circle cx="644" cy="252" r="1"/><circle cx="672" cy="252" r="1"/><circle cx="700" cy="252" r="1"/><circle cx="728" cy="252" r="1"/><circle cx="756" cy="252" r="1"/><circle cx="784" cy="252" r="1"/>
-    <circle cx="28" cy="280" r="1"/><circle cx="56" cy="280" r="1"/><circle cx="84" cy="280" r="1"/><circle cx="112" cy="280" r="1"/><circle cx="140" cy="280" r="1"/><circle cx="168" cy="280" r="1"/><circle cx="196" cy="280" r="1"/><circle cx="224" cy="280" r="1"/><circle cx="252" cy="280" r="1"/><circle cx="280" cy="280" r="1"/><circle cx="308" cy="280" r="1"/><circle cx="336" cy="280" r="1"/><circle cx="364" cy="280" r="1"/><circle cx="392" cy="280" r="1"/><circle cx="420" cy="280" r="1"/><circle cx="448" cy="280" r="1"/><circle cx="476" cy="280" r="1"/><circle cx="504" cy="280" r="1"/><circle cx="532" cy="280" r="1"/><circle cx="560" cy="280" r="1"/><circle cx="588" cy="280" r="1"/><circle cx="616" cy="280" r="1"/><circle cx="644" cy="280" r="1"/><circle cx="672" cy="280" r="1"/><circle cx="700" cy="280" r="1"/><circle cx="728" cy="280" r="1"/><circle cx="756" cy="280" r="1"/><circle cx="784" cy="280" r="1"/>
-    <circle cx="28" cy="308" r="1"/><circle cx="56" cy="308" r="1"/><circle cx="84" cy="308" r="1"/><circle cx="112" cy="308" r="1"/><circle cx="140" cy="308" r="1"/><circle cx="168" cy="308" r="1"/><circle cx="196" cy="308" r="1"/><circle cx="224" cy="308" r="1"/><circle cx="252" cy="308" r="1"/><circle cx="280" cy="308" r="1"/><circle cx="308" cy="308" r="1"/><circle cx="336" cy="308" r="1"/><circle cx="364" cy="308" r="1"/><circle cx="392" cy="308" r="1"/><circle cx="420" cy="308" r="1"/><circle cx="448" cy="308" r="1"/><circle cx="476" cy="308" r="1"/><circle cx="504" cy="308" r="1"/><circle cx="532" cy="308" r="1"/><circle cx="560" cy="308" r="1"/><circle cx="588" cy="308" r="1"/><circle cx="616" cy="308" r="1"/><circle cx="644" cy="308" r="1"/><circle cx="672" cy="308" r="1"/><circle cx="700" cy="308" r="1"/><circle cx="728" cy="308" r="1"/><circle cx="756" cy="308" r="1"/><circle cx="784" cy="308" r="1"/>
-  </g>
+  <circle cx="544.3" cy="31.0" r="0.7300351820429432" fill="#9370FF" opacity="0.43"><animate attributeName="opacity" values="0.43;0.77;0.43" dur="2.5s" begin="0.4s" repeatCount="indefinite"/></circle>
+  <circle cx="504.2" cy="34.0" r="0.512434287833911" fill="#9370FF" opacity="0.19"><animate attributeName="opacity" values="0.19;0.82;0.19" dur="3.8s" begin="0.1s" repeatCount="indefinite"/></circle>
+  <circle cx="466.9" cy="117.0" r="1.1071188206510905" fill="#F7DF1E" opacity="0.29"><animate attributeName="opacity" values="0.29;0.64;0.29" dur="4.7s" begin="0.6s" repeatCount="indefinite"/></circle>
+  <circle cx="196.6" cy="355.9" r="0.5226523318238185" fill="#00FF88" opacity="0.37"><animate attributeName="opacity" values="0.37;0.9;0.37" dur="2.3s" begin="3.4s" repeatCount="indefinite"/></circle>
+  <circle cx="618.4" cy="255.9" r="1.567738916775245" fill="#00FF88" opacity="0.38"><animate attributeName="opacity" values="0.38;0.94;0.38" dur="2.3s" begin="1.2s" repeatCount="indefinite"/></circle>
+  <circle cx="316.5" cy="104.6" r="0.48346617858848917" fill="#ffffff" opacity="0.14"><animate attributeName="opacity" values="0.14;0.62;0.14" dur="2.8s" begin="1.2s" repeatCount="indefinite"/></circle>
+  <circle cx="102.8" cy="142.3" r="1.1628213331172803" fill="#FF5A5A" opacity="0.4"><animate attributeName="opacity" values="0.4;0.85;0.4" dur="2.6s" begin="1.4s" repeatCount="indefinite"/></circle>
+  <circle cx="580.5" cy="51.4" r="1.1619739458364724" fill="#50B4FF" opacity="0.27"><animate attributeName="opacity" values="0.27;0.99;0.27" dur="4.6s" begin="0.7s" repeatCount="indefinite"/></circle>
+  <circle cx="544.8" cy="265.1" r="1.2215371011878497" fill="#F7DF1E" opacity="0.24"><animate attributeName="opacity" values="0.24;0.63;0.24" dur="2.8s" begin="0.1s" repeatCount="indefinite"/></circle>
+  <circle cx="193.0" cy="434.9" r="1.4516411517672028" fill="#FF5A5A" opacity="0.5"><animate attributeName="opacity" values="0.5;0.82;0.5" dur="2.7s" begin="2.0s" repeatCount="indefinite"/></circle>
+  <circle cx="137.2" cy="81.4" r="1.293986778509928" fill="#50B4FF" opacity="0.5"><animate attributeName="opacity" values="0.5;0.7;0.5" dur="2.9s" begin="2.3s" repeatCount="indefinite"/></circle>
+  <circle cx="199.8" cy="458.9" r="1.0114315524117576" fill="#F7DF1E" opacity="0.17"><animate attributeName="opacity" values="0.17;0.58;0.17" dur="4.6s" begin="3.4s" repeatCount="indefinite"/></circle>
+  <circle cx="578.0" cy="282.4" r="0.8617207740094002" fill="#50B4FF" opacity="0.54"><animate attributeName="opacity" values="0.54;0.93;0.54" dur="5.5s" begin="2.1s" repeatCount="indefinite"/></circle>
+  <circle cx="29.4" cy="337.1" r="1.21805244283189" fill="#50B4FF" opacity="0.25"><animate attributeName="opacity" values="0.25;0.65;0.25" dur="4.6s" begin="3.1s" repeatCount="indefinite"/></circle>
+  <circle cx="149.7" cy="21.4" r="1.266510473571893" fill="#ffffff" opacity="0.18"><animate attributeName="opacity" values="0.18;0.96;0.18" dur="2.9s" begin="2.0s" repeatCount="indefinite"/></circle>
+  <circle cx="733.8" cy="151.3" r="1.1667393938392063" fill="#50B4FF" opacity="0.17"><animate attributeName="opacity" values="0.17;0.98;0.17" dur="2.7s" begin="1.5s" repeatCount="indefinite"/></circle>
+  <circle cx="776.4" cy="424.1" r="1.118733501352275" fill="#00FF88" opacity="0.5"><animate attributeName="opacity" values="0.5;0.92;0.5" dur="2.1s" begin="3.7s" repeatCount="indefinite"/></circle>
+  <circle cx="272.2" cy="45.5" r="1.4536115190448489" fill="#F7DF1E" opacity="0.13"><animate attributeName="opacity" values="0.13;0.88;0.13" dur="2.3s" begin="1.9s" repeatCount="indefinite"/></circle>
+  <circle cx="648.0" cy="76.5" r="0.9703388537184777" fill="#50B4FF" opacity="0.37"><animate attributeName="opacity" values="0.37;0.98;0.37" dur="2.6s" begin="2.1s" repeatCount="indefinite"/></circle>
+  <circle cx="781.7" cy="352.3" r="1.227841158519546" fill="#ffffff" opacity="0.39"><animate attributeName="opacity" values="0.39;0.72;0.39" dur="3.1s" begin="4.0s" repeatCount="indefinite"/></circle>
+  <circle cx="444.4" cy="73.2" r="0.6696368044378689" fill="#FF5A5A" opacity="0.36"><animate attributeName="opacity" values="0.36;0.5;0.36" dur="2.1s" begin="2.2s" repeatCount="indefinite"/></circle>
+  <circle cx="600.4" cy="45.9" r="0.480880393732369" fill="#F7DF1E" opacity="0.21"><animate attributeName="opacity" values="0.21;0.83;0.21" dur="5.0s" begin="0.3s" repeatCount="indefinite"/></circle>
+  <circle cx="195.7" cy="78.2" r="1.5226170886968053" fill="#50B4FF" opacity="0.31"><animate attributeName="opacity" values="0.31;0.7;0.31" dur="4.0s" begin="1.0s" repeatCount="indefinite"/></circle>
+  <circle cx="97.3" cy="310.0" r="0.8251570799074647" fill="#00FF88" opacity="0.4"><animate attributeName="opacity" values="0.4;0.99;0.4" dur="3.6s" begin="2.9s" repeatCount="indefinite"/></circle>
+  <circle cx="100.7" cy="197.2" r="0.8071631264739558" fill="#F7DF1E" opacity="0.3"><animate attributeName="opacity" values="0.3;0.71;0.3" dur="2.9s" begin="0.8s" repeatCount="indefinite"/></circle>
+  <circle cx="248.4" cy="129.9" r="1.5079187191312156" fill="#00FF88" opacity="0.14"><animate attributeName="opacity" values="0.14;0.83;0.14" dur="4.8s" begin="3.4s" repeatCount="indefinite"/></circle>
+  <circle cx="463.3" cy="26.5" r="0.5119153314206032" fill="#9370FF" opacity="0.2"><animate attributeName="opacity" values="0.2;0.7;0.2" dur="2.6s" begin="1.9s" repeatCount="indefinite"/></circle>
+  <circle cx="68.1" cy="186.7" r="1.5823706125356711" fill="#FF5A5A" opacity="0.23"><animate attributeName="opacity" values="0.23;0.85;0.23" dur="5.2s" begin="3.1s" repeatCount="indefinite"/></circle>
+  <circle cx="619.0" cy="364.7" r="1.1942455743408944" fill="#00FF88" opacity="0.54"><animate attributeName="opacity" values="0.54;0.79;0.54" dur="2.5s" begin="1.2s" repeatCount="indefinite"/></circle>
+  <circle cx="464.6" cy="349.1" r="0.4685983274889797" fill="#50B4FF" opacity="0.34"><animate attributeName="opacity" values="0.34;0.53;0.34" dur="3.7s" begin="3.7s" repeatCount="indefinite"/></circle>
+  <circle cx="436.4" cy="394.6" r="0.4822255992445509" fill="#F7DF1E" opacity="0.15"><animate attributeName="opacity" values="0.15;0.95;0.15" dur="4.4s" begin="0.9s" repeatCount="indefinite"/></circle>
+  <circle cx="221.9" cy="281.6" r="1.1432578123985238" fill="#00FF88" opacity="0.24"><animate attributeName="opacity" values="0.24;0.63;0.24" dur="4.3s" begin="2.3s" repeatCount="indefinite"/></circle>
+  <circle cx="569.2" cy="158.2" r="0.7187374150376247" fill="#9370FF" opacity="0.24"><animate attributeName="opacity" values="0.24;0.88;0.24" dur="4.4s" begin="1.2s" repeatCount="indefinite"/></circle>
+  <circle cx="79.5" cy="221.6" r="1.5981453290253311" fill="#F7DF1E" opacity="0.22"><animate attributeName="opacity" values="0.22;0.97;0.22" dur="2.3s" begin="0.9s" repeatCount="indefinite"/></circle>
+  <circle cx="742.3" cy="406.9" r="0.8434325064866608" fill="#9370FF" opacity="0.24"><animate attributeName="opacity" values="0.24;0.99;0.24" dur="3.5s" begin="2.2s" repeatCount="indefinite"/></circle>
+  <circle cx="681.8" cy="252.7" r="1.2014358444551005" fill="#50B4FF" opacity="0.52"><animate attributeName="opacity" values="0.52;0.57;0.52" dur="3.0s" begin="2.7s" repeatCount="indefinite"/></circle>
+  <circle cx="114.7" cy="67.1" r="1.0638683690617792" fill="#FF5A5A" opacity="0.25"><animate attributeName="opacity" values="0.25;0.84;0.25" dur="3.0s" begin="0.8s" repeatCount="indefinite"/></circle>
+  <circle cx="719.4" cy="242.4" r="0.7013455024838731" fill="#F7DF1E" opacity="0.22"><animate attributeName="opacity" values="0.22;0.5;0.22" dur="2.3s" begin="1.7s" repeatCount="indefinite"/></circle>
+  <circle cx="652.3" cy="300.3" r="0.7143463149212179" fill="#ffffff" opacity="0.35"><animate attributeName="opacity" values="0.35;0.56;0.35" dur="3.5s" begin="2.8s" repeatCount="indefinite"/></circle>
+  <circle cx="794.9" cy="324.0" r="0.5788651425742235" fill="#F7DF1E" opacity="0.17"><animate attributeName="opacity" values="0.17;0.56;0.17" dur="4.9s" begin="2.3s" repeatCount="indefinite"/></circle>
+  <circle cx="272.8" cy="415.6" r="1.3553467658656502" fill="#F7DF1E" opacity="0.21"><animate attributeName="opacity" values="0.21;0.55;0.21" dur="5.1s" begin="0.8s" repeatCount="indefinite"/></circle>
+  <circle cx="659.7" cy="409.0" r="0.8876528677985402" fill="#50B4FF" opacity="0.21"><animate attributeName="opacity" values="0.21;0.58;0.21" dur="4.6s" begin="3.7s" repeatCount="indefinite"/></circle>
+  <circle cx="675.9" cy="97.9" r="0.8947532924245569" fill="#9370FF" opacity="0.52"><animate attributeName="opacity" values="0.52;0.9;0.52" dur="4.6s" begin="1.3s" repeatCount="indefinite"/></circle>
+  <circle cx="728.5" cy="376.7" r="0.7201668515133666" fill="#ffffff" opacity="0.49"><animate attributeName="opacity" values="0.49;0.61;0.49" dur="2.4s" begin="3.5s" repeatCount="indefinite"/></circle>
+  <circle cx="689.6" cy="222.5" r="0.7662290408063208" fill="#9370FF" opacity="0.28"><animate attributeName="opacity" values="0.28;0.64;0.28" dur="2.8s" begin="2.6s" repeatCount="indefinite"/></circle>
+  <circle cx="76.9" cy="360.3" r="0.8213753548993028" fill="#50B4FF" opacity="0.34"><animate attributeName="opacity" values="0.34;0.97;0.34" dur="3.4s" begin="3.9s" repeatCount="indefinite"/></circle>
+  <circle cx="114.6" cy="447.0" r="0.6142813794069564" fill="#FF5A5A" opacity="0.26"><animate attributeName="opacity" values="0.26;0.89;0.26" dur="2.1s" begin="2.4s" repeatCount="indefinite"/></circle>
+  <circle cx="377.8" cy="453.1" r="0.5387749408351966" fill="#50B4FF" opacity="0.3"><animate attributeName="opacity" values="0.3;0.76;0.3" dur="2.7s" begin="0.2s" repeatCount="indefinite"/></circle>
+  <circle cx="681.3" cy="322.2" r="1.528315744477064" fill="#ffffff" opacity="0.13"><animate attributeName="opacity" values="0.13;0.83;0.13" dur="4.3s" begin="1.5s" repeatCount="indefinite"/></circle>
+  <circle cx="290.8" cy="158.1" r="1.4176183354076026" fill="#ffffff" opacity="0.4"><animate attributeName="opacity" values="0.4;0.66;0.4" dur="5.2s" begin="2.0s" repeatCount="indefinite"/></circle>
+  <circle cx="591.7" cy="263.9" r="0.630208111588177" fill="#ffffff" opacity="0.51"><animate attributeName="opacity" values="0.51;0.81;0.51" dur="5.3s" begin="2.7s" repeatCount="indefinite"/></circle>
+  <circle cx="266.8" cy="261.1" r="0.40048712763674504" fill="#FF5A5A" opacity="0.37"><animate attributeName="opacity" values="0.37;0.66;0.37" dur="2.7s" begin="3.1s" repeatCount="indefinite"/></circle>
+  <circle cx="382.3" cy="317.3" r="1.0134087962495046" fill="#ffffff" opacity="0.33"><animate attributeName="opacity" values="0.33;0.82;0.33" dur="2.6s" begin="0.3s" repeatCount="indefinite"/></circle>
+  <circle cx="294.9" cy="380.1" r="1.3013657650488788" fill="#ffffff" opacity="0.17"><animate attributeName="opacity" values="0.17;0.52;0.17" dur="3.1s" begin="3.2s" repeatCount="indefinite"/></circle>
+  <circle cx="826.8" cy="289.0" r="1.3221872068002365" fill="#00FF88" opacity="0.19"><animate attributeName="opacity" values="0.19;0.85;0.19" dur="3.5s" begin="2.5s" repeatCount="indefinite"/></circle>
+  <circle cx="425.4" cy="127.4" r="1.187269613334141" fill="#F7DF1E" opacity="0.5"><animate attributeName="opacity" values="0.5;0.89;0.5" dur="5.1s" begin="3.4s" repeatCount="indefinite"/></circle>
+  <circle cx="199.4" cy="373.8" r="1.2350941316898862" fill="#00FF88" opacity="0.48"><animate attributeName="opacity" values="0.48;0.73;0.48" dur="2.2s" begin="1.0s" repeatCount="indefinite"/></circle>
+  <circle cx="677.2" cy="313.7" r="1.5854709436797378" fill="#50B4FF" opacity="0.3"><animate attributeName="opacity" values="0.3;0.91;0.3" dur="3.1s" begin="3.0s" repeatCount="indefinite"/></circle>
+  <circle cx="751.5" cy="207.8" r="1.4882256765473363" fill="#00FF88" opacity="0.31"><animate attributeName="opacity" values="0.31;0.63;0.31" dur="5.1s" begin="3.0s" repeatCount="indefinite"/></circle>
+  <circle cx="222.7" cy="300.6" r="1.3189764211565986" fill="#50B4FF" opacity="0.3"><animate attributeName="opacity" values="0.3;0.86;0.3" dur="3.7s" begin="1.0s" repeatCount="indefinite"/></circle>
+  <circle cx="212.3" cy="167.8" r="1.4716321993483805" fill="#F7DF1E" opacity="0.41"><animate attributeName="opacity" values="0.41;0.85;0.41" dur="2.5s" begin="0.9s" repeatCount="indefinite"/></circle>
+  <circle cx="72.7" cy="199.3" r="1.0511333686046984" fill="#00FF88" opacity="0.28"><animate attributeName="opacity" values="0.28;0.88;0.28" dur="2.2s" begin="3.3s" repeatCount="indefinite"/></circle>
+  <circle cx="795.8" cy="28.6" r="1.4567880073093886" fill="#50B4FF" opacity="0.26"><animate attributeName="opacity" values="0.26;0.88;0.26" dur="3.3s" begin="0.0s" repeatCount="indefinite"/></circle>
+  <circle cx="719.8" cy="439.5" r="0.9028255391557863" fill="#ffffff" opacity="0.5"><animate attributeName="opacity" values="0.5;0.74;0.5" dur="4.6s" begin="3.2s" repeatCount="indefinite"/></circle>
+  <circle cx="243.8" cy="233.7" r="0.8666286438953538" fill="#ffffff" opacity="0.17"><animate attributeName="opacity" values="0.17;0.73;0.17" dur="4.4s" begin="1.6s" repeatCount="indefinite"/></circle>
 
-  <!-- Top glow -->
-  <rect width="800" height="320" fill="url(#topGlow)" rx="16"/>
-
-  <!-- Particles (colored dots scattered) -->
-  <g opacity="0.7">
-    <circle cx="45" cy="38" r="1.5" fill="#F7DF1E" opacity="0.5"><animate attributeName="opacity" values="0.5;0.9;0.5" dur="3.2s" repeatCount="indefinite"/></circle>
-    <circle cx="710" cy="55" r="1.2" fill="#7B61FF" opacity="0.5"><animate attributeName="opacity" values="0.4;0.8;0.4" dur="2.8s" repeatCount="indefinite"/></circle>
-    <circle cx="760" cy="200" r="1.8" fill="#FF6B6B" opacity="0.4"><animate attributeName="opacity" values="0.3;0.7;0.3" dur="3.5s" repeatCount="indefinite"/></circle>
-    <circle cx="35" cy="220" r="1.3" fill="#00D26A" opacity="0.45"><animate attributeName="opacity" values="0.4;0.8;0.4" dur="4s" repeatCount="indefinite"/></circle>
-    <circle cx="680" cy="290" r="1.6" fill="#63B3ED" opacity="0.4"><animate attributeName="opacity" values="0.3;0.6;0.3" dur="2.5s" repeatCount="indefinite"/></circle>
-    <circle cx="120" cy="290" r="1.1" fill="#F7DF1E" opacity="0.35"><animate attributeName="opacity" values="0.3;0.7;0.3" dur="3.8s" repeatCount="indefinite"/></circle>
-    <circle cx="750" cy="130" r="1.4" fill="#7B61FF" opacity="0.4"><animate attributeName="opacity" values="0.35;0.75;0.35" dur="2.2s" repeatCount="indefinite"/></circle>
-    <circle cx="60" cy="160" r="1.2" fill="#FF6B6B" opacity="0.4"><animate attributeName="opacity" values="0.4;0.8;0.4" dur="3.1s" repeatCount="indefinite"/></circle>
-    <circle cx="400" cy="25" r="1.5" fill="#00D26A" opacity="0.35"><animate attributeName="opacity" values="0.25;0.6;0.25" dur="4.2s" repeatCount="indefinite"/></circle>
-    <circle cx="550" cy="305" r="1.3" fill="#F7DF1E" opacity="0.4"><animate attributeName="opacity" values="0.3;0.65;0.3" dur="3.6s" repeatCount="indefinite"/></circle>
-    <circle cx="200" cy="18" r="1.1" fill="#7B61FF" opacity="0.35"><animate attributeName="opacity" values="0.25;0.55;0.25" dur="2.9s" repeatCount="indefinite"/></circle>
-    <circle cx="640" cy="22" r="1.4" fill="#FF6B6B" opacity="0.4"><animate attributeName="opacity" values="0.3;0.7;0.3" dur="3.3s" repeatCount="indefinite"/></circle>
-  </g>
-
-  <!-- Scanline sweep animation -->
-  <rect width="800" height="30" fill="url(#scanGrad)" rx="0">
-    <animateTransform attributeName="transform" type="translate" values="0,-30;0,340" dur="5s" repeatCount="indefinite"/>
+  <rect width="860" height="36" fill="url(#scanG)">
+    <animateTransform attributeName="transform" type="translate" values="0,-36;0,516" dur="6s" repeatCount="indefinite" calcMode="linear"/>
   </rect>
-
-  <!-- 3D Shadow layers for J -->
-  <text x="82" y="152" font-family="'Courier New',monospace" font-size="88" font-weight="900" fill="rgba(180,160,0,0.18)" filter="url(#blur1)">J</text>
-  <text x="80" y="150" font-family="'Courier New',monospace" font-size="88" font-weight="900" fill="rgba(180,160,0,0.22)">J</text>
-  <text x="78" y="148" font-family="'Courier New',monospace" font-size="88" font-weight="900" fill="rgba(180,160,0,0.16)">J</text>
-  <!-- J main -->
-  <text x="76" y="146" font-family="'Courier New',monospace" font-size="88" font-weight="900" fill="url(#jGrad)">J</text>
-
-  <!-- 3D Shadow layers for S -->
-  <text x="168" y="152" font-family="'Courier New',monospace" font-size="88" font-weight="900" fill="rgba(180,160,0,0.18)" filter="url(#blur1)">S</text>
-  <text x="166" y="150" font-family="'Courier New',monospace" font-size="88" font-weight="900" fill="rgba(180,160,0,0.22)">S</text>
-  <text x="164" y="148" font-family="'Courier New',monospace" font-size="88" font-weight="900" fill="rgba(180,160,0,0.16)">S</text>
-  <!-- S main -->
-  <text x="162" y="146" font-family="'Courier New',monospace" font-size="88" font-weight="900" fill="url(#jGrad)">S</text>
-
-  <!-- Divider dot -->
-  <circle cx="268" cy="110" r="5" fill="#7B61FF" opacity="0.7"/>
-  <circle cx="268" cy="110" r="8" fill="#7B61FF" opacity="0.15"/>
-
-  <!-- 3D FUNDAMENTALS text -->
-  <!-- F -->
-  <text x="293" y="152" font-family="'Courier New',monospace" font-size="88" font-weight="900" fill="rgba(80,60,180,0.20)" filter="url(#blur1)">F</text>
-  <text x="291" y="150" font-family="'Courier New',monospace" font-size="88" font-weight="900" fill="rgba(80,60,180,0.22)">F</text>
-  <text x="289" y="148" font-family="'Courier New',monospace" font-size="88" font-weight="900" fill="rgba(80,60,180,0.15)">F</text>
-  <text x="287" y="146" font-family="'Courier New',monospace" font-size="88" font-weight="900" fill="url(#wGrad)">F</text>
-
-  <!-- U -->
-  <text x="350" y="152" font-family="'Courier New',monospace" font-size="88" font-weight="900" fill="rgba(80,60,180,0.20)" filter="url(#blur1)">U</text>
-  <text x="348" y="150" font-family="'Courier New',monospace" font-size="88" font-weight="900" fill="rgba(80,60,180,0.22)">U</text>
-  <text x="346" y="148" font-family="'Courier New',monospace" font-size="88" font-weight="900" fill="rgba(80,60,180,0.15)">U</text>
-  <text x="344" y="146" font-family="'Courier New',monospace" font-size="88" font-weight="900" fill="url(#wGrad)">U</text>
-
-  <!-- N -->
-  <text x="418" y="152" font-family="'Courier New',monospace" font-size="88" font-weight="900" fill="rgba(80,60,180,0.20)" filter="url(#blur1)">N</text>
-  <text x="416" y="150" font-family="'Courier New',monospace" font-size="88" font-weight="900" fill="rgba(80,60,180,0.22)">N</text>
-  <text x="414" y="148" font-family="'Courier New',monospace" font-size="88" font-weight="900" fill="rgba(80,60,180,0.15)">N</text>
-  <text x="412" y="146" font-family="'Courier New',monospace" font-size="88" font-weight="900" fill="url(#wGrad)">N</text>
-
-  <!-- D -->
-  <text x="488" y="152" font-family="'Courier New',monospace" font-size="88" font-weight="900" fill="rgba(80,60,180,0.20)" filter="url(#blur1)">D</text>
-  <text x="486" y="150" font-family="'Courier New',monospace" font-size="88" font-weight="900" fill="rgba(80,60,180,0.22)">D</text>
-  <text x="484" y="148" font-family="'Courier New',monospace" font-size="88" font-weight="900" fill="rgba(80,60,180,0.15)">D</text>
-  <text x="482" y="146" font-family="'Courier New',monospace" font-size="88" font-weight="900" fill="url(#wGrad)">D</text>
-
-  <!-- S2 -->
-  <text x="556" y="152" font-family="'Courier New',monospace" font-size="88" font-weight="900" fill="rgba(80,60,180,0.20)" filter="url(#blur1)">S</text>
-  <text x="554" y="150" font-family="'Courier New',monospace" font-size="88" font-weight="900" fill="rgba(80,60,180,0.22)">S</text>
-  <text x="552" y="148" font-family="'Courier New',monospace" font-size="88" font-weight="900" fill="rgba(80,60,180,0.15)">S</text>
-  <text x="550" y="146" font-family="'Courier New',monospace" font-size="88" font-weight="900" fill="url(#wGrad)">S</text>
-
-  <!-- floating pulse rings around JS -->
-  <circle cx="130" cy="103" r="50" fill="none" stroke="#F7DF1E" stroke-width="0.5" opacity="0.15">
-    <animate attributeName="r" values="45;60;45" dur="4s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0.15;0.04;0.15" dur="4s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="130" cy="103" r="65" fill="none" stroke="#F7DF1E" stroke-width="0.5" opacity="0.08">
-    <animate attributeName="r" values="60;78;60" dur="4s" begin="0.5s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0.08;0.02;0.08" dur="4s" begin="0.5s" repeatCount="indefinite"/>
-  </circle>
-
-  <!-- Subtitle -->
-  <text x="400" y="195" font-family="'Courier New',monospace" font-size="12.5" fill="rgba(200,200,255,0.45)" text-anchor="middle" letter-spacing="2">MERN STACK + AI ENGINEERING BOOTCAMP  ·  WEEK 3</text>
-
-  <!-- Thin separator line -->
-  <line x1="60" y1="210" x2="740" y2="210" stroke="rgba(255,255,255,0.07)" stroke-width="0.5"/>
-
-  <!-- Bottom section: week / section / marks / status chips -->
-  <g font-family="'Courier New',monospace" font-size="11" font-weight="700">
-    <!-- JS chip -->
-    <rect x="60" y="224" width="118" height="24" rx="12" fill="#F7DF1E"/>
-    <text x="119" y="240" fill="#0a0a00" text-anchor="middle">JavaScript ES2024</text>
-
-    <!-- Complete chip -->
-    <rect x="188" y="224" width="85" height="24" rx="12" fill="rgba(0,210,106,0.15)" stroke="rgba(0,210,106,0.35)" stroke-width="0.8"/>
-    <text x="230" y="240" fill="#00e676" text-anchor="middle">✓ Complete</text>
-
-    <!-- Section A chip -->
-    <rect x="283" y="224" width="120" height="24" rx="12" fill="rgba(138,99,255,0.15)" stroke="rgba(138,99,255,0.35)" stroke-width="0.8"/>
-    <text x="343" y="240" fill="#b085ff" text-anchor="middle">Section A · 30 Marks</text>
-
-    <!-- Week 3 chip -->
-    <rect x="413" y="224" width="70" height="24" rx="12" fill="rgba(255,107,107,0.15)" stroke="rgba(255,107,107,0.35)" stroke-width="0.8"/>
-    <text x="448" y="240" fill="#ff8a8a" text-anchor="middle">Week 3</text>
-
-    <!-- Bootcamp chip -->
-    <rect x="493" y="224" width="130" height="24" rx="12" fill="rgba(99,179,237,0.15)" stroke="rgba(99,179,237,0.35)" stroke-width="0.8"/>
-    <text x="558" y="240" fill="#90caf9" text-anchor="middle">MERN + AI Bootcamp</text>
+  <ellipse cx="175" cy="155" rx="90" ry="72" fill="url(#jsGlow)"/>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-7;0,0;0,3;0,0" dur="3.8s" begin="0s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <text x="78" y="172" font-family="'Courier New',monospace" font-size="92" font-weight="900" fill="rgba(247,223,30,0.16)" text-anchor="start">J</text>
   </g>
-
-  <!-- Bottom separator -->
-  <line x1="60" y1="262" x2="740" y2="262" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
-
-  <!-- Topic pills row -->
-  <g font-family="'Courier New',monospace" font-size="10" fill="rgba(255,255,255,0.32)">
-    <text x="72" y="283">var/let/const</text>
-    <text x="162" y="283">·</text>
-    <text x="172" y="283">V8 Engine</text>
-    <text x="243" y="283">·</text>
-    <text x="253" y="283">Coercion</text>
-    <text x="316" y="283">·</text>
-    <text x="326" y="283">Heap/Stack</text>
-    <text x="400" y="283">·</text>
-    <text x="410" y="283">Pass by Ref</text>
-    <text x="487" y="283">·</text>
-    <text x="497" y="283">Functions</text>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-7;0,0;0,3;0,0" dur="3.8s" begin="0s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <text x="76" y="170" font-family="'Courier New',monospace" font-size="92" font-weight="900" fill="rgba(247,223,30,0.18)" text-anchor="start">J</text>
   </g>
-  <!-- 30/30 pill right side -->
-  <rect x="630" y="270" width="108" height="22" rx="11" fill="rgba(0,210,106,0.12)" stroke="rgba(0,210,106,0.3)" stroke-width="0.8"/>
-  <text x="684" y="285" font-family="'Courier New',monospace" font-size="10.5" font-weight="700" fill="#00e676" text-anchor="middle">30 / 30  ✓</text>
-
-  <!-- Rainbow top border (animated shimmer) -->
-  <rect width="800" height="3" rx="0" fill="url(#topBorder)">
-    <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
-  </rect>
-
-  <!-- Corner accent top-right -->
-  <circle cx="775" cy="32" r="18" fill="rgba(123,97,255,0.08)" stroke="rgba(123,97,255,0.2)" stroke-width="0.5"/>
-  <text x="775" y="37" font-family="'Courier New',monospace" font-size="11" font-weight="700" fill="#b085ff" text-anchor="middle">JS</text>
-
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-7;0,0;0,3;0,0" dur="3.8s" begin="0s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <text x="74" y="168" font-family="'Courier New',monospace" font-size="92" font-weight="900" fill="rgba(247,223,30,0.15)" text-anchor="start">J</text>
+  </g>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-7;0,0;0,3;0,0" dur="3.8s" begin="0s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <text x="72" y="165" font-family="'Courier New',monospace" font-size="92" font-weight="900" fill="url(#jGrad)" text-anchor="start" filter="url(#glow)">J</text>
+  </g>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,5;0,0;0,-6;0,0" dur="4.1s" begin="0.4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <text x="134" y="172" font-family="'Courier New',monospace" font-size="92" font-weight="900" fill="rgba(247,223,30,0.16)" text-anchor="start">S</text>
+  </g>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,5;0,0;0,-6;0,0" dur="4.1s" begin="0.4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <text x="132" y="170" font-family="'Courier New',monospace" font-size="92" font-weight="900" fill="rgba(247,223,30,0.18)" text-anchor="start">S</text>
+  </g>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,5;0,0;0,-6;0,0" dur="4.1s" begin="0.4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <text x="130" y="168" font-family="'Courier New',monospace" font-size="92" font-weight="900" fill="rgba(247,223,30,0.15)" text-anchor="start">S</text>
+  </g>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,5;0,0;0,-6;0,0" dur="4.1s" begin="0.4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <text x="128" y="165" font-family="'Courier New',monospace" font-size="92" font-weight="900" fill="url(#jGrad)" text-anchor="start" filter="url(#glow)">S</text>
+  </g>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-6;0,0;0,4;0,0" dur="3.5s" begin="0.7s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <text x="216" y="172" font-family="'Courier New',monospace" font-size="92" font-weight="900" fill="rgba(147,112,255,0.16)" text-anchor="start">F</text>
+  </g>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-6;0,0;0,4;0,0" dur="3.5s" begin="0.7s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <text x="214" y="170" font-family="'Courier New',monospace" font-size="92" font-weight="900" fill="rgba(147,112,255,0.18)" text-anchor="start">F</text>
+  </g>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-6;0,0;0,4;0,0" dur="3.5s" begin="0.7s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <text x="212" y="168" font-family="'Courier New',monospace" font-size="92" font-weight="900" fill="rgba(147,112,255,0.15)" text-anchor="start">F</text>
+  </g>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-6;0,0;0,4;0,0" dur="3.5s" begin="0.7s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <text x="210" y="165" font-family="'Courier New',monospace" font-size="92" font-weight="900" fill="url(#wGrad)" text-anchor="start" filter="url(#glow)">F</text>
+  </g>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,7;0,0;0,-5;0,0" dur="4.4s" begin="1.0s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <text x="270" y="172" font-family="'Courier New',monospace" font-size="92" font-weight="900" fill="rgba(147,112,255,0.16)" text-anchor="start">U</text>
+  </g>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,7;0,0;0,-5;0,0" dur="4.4s" begin="1.0s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <text x="268" y="170" font-family="'Courier New',monospace" font-size="92" font-weight="900" fill="rgba(147,112,255,0.18)" text-anchor="start">U</text>
+  </g>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,7;0,0;0,-5;0,0" dur="4.4s" begin="1.0s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <text x="266" y="168" font-family="'Courier New',monospace" font-size="92" font-weight="900" fill="rgba(147,112,255,0.15)" text-anchor="start">U</text>
+  </g>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,7;0,0;0,-5;0,0" dur="4.4s" begin="1.0s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <text x="264" y="165" font-family="'Courier New',monospace" font-size="92" font-weight="900" fill="url(#wGrad)" text-anchor="start" filter="url(#glow)">U</text>
+  </g>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-5;0,0;0,6;0,0" dur="3.9s" begin="1.3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <text x="328" y="172" font-family="'Courier New',monospace" font-size="92" font-weight="900" fill="rgba(147,112,255,0.16)" text-anchor="start">N</text>
+  </g>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-5;0,0;0,6;0,0" dur="3.9s" begin="1.3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <text x="326" y="170" font-family="'Courier New',monospace" font-size="92" font-weight="900" fill="rgba(147,112,255,0.18)" text-anchor="start">N</text>
+  </g>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-5;0,0;0,6;0,0" dur="3.9s" begin="1.3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <text x="324" y="168" font-family="'Courier New',monospace" font-size="92" font-weight="900" fill="rgba(147,112,255,0.15)" text-anchor="start">N</text>
+  </g>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-5;0,0;0,6;0,0" dur="3.9s" begin="1.3s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <text x="322" y="165" font-family="'Courier New',monospace" font-size="92" font-weight="900" fill="url(#wGrad)" text-anchor="start" filter="url(#glow)">N</text>
+  </g>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,6;0,0;0,-7;0,0" dur="4.2s" begin="1.6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <text x="384" y="172" font-family="'Courier New',monospace" font-size="92" font-weight="900" fill="rgba(80,180,255,0.16)" text-anchor="start">D</text>
+  </g>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,6;0,0;0,-7;0,0" dur="4.2s" begin="1.6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <text x="382" y="170" font-family="'Courier New',monospace" font-size="92" font-weight="900" fill="rgba(80,180,255,0.18)" text-anchor="start">D</text>
+  </g>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,6;0,0;0,-7;0,0" dur="4.2s" begin="1.6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <text x="380" y="168" font-family="'Courier New',monospace" font-size="92" font-weight="900" fill="rgba(80,180,255,0.15)" text-anchor="start">D</text>
+  </g>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,6;0,0;0,-7;0,0" dur="4.2s" begin="1.6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <text x="378" y="165" font-family="'Courier New',monospace" font-size="92" font-weight="900" fill="url(#wGrad)" text-anchor="start" filter="url(#glow)">D</text>
+  </g>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-7;0,0;0,5;0,0" dur="3.7s" begin="1.9s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <text x="440" y="172" font-family="'Courier New',monospace" font-size="92" font-weight="900" fill="rgba(80,180,255,0.16)" text-anchor="start">S</text>
+  </g>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-7;0,0;0,5;0,0" dur="3.7s" begin="1.9s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <text x="438" y="170" font-family="'Courier New',monospace" font-size="92" font-weight="900" fill="rgba(80,180,255,0.18)" text-anchor="start">S</text>
+  </g>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-7;0,0;0,5;0,0" dur="3.7s" begin="1.9s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <text x="436" y="168" font-family="'Courier New',monospace" font-size="92" font-weight="900" fill="rgba(80,180,255,0.15)" text-anchor="start">S</text>
+  </g>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-7;0,0;0,5;0,0" dur="3.7s" begin="1.9s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1;0.4 0 0.6 1"/>
+    <text x="434" y="165" font-family="'Courier New',monospace" font-size="92" font-weight="900" fill="url(#wGrad)" text-anchor="start" filter="url(#glow)">S</text>
+  </g>
+  <circle cx="196" cy="125" r="5" fill="#9370FF" opacity="0.8">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="196" cy="125" r="10" fill="#9370FF" opacity="0.15">
+    <animate attributeName="r" values="8;14;8" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.15;0.04;0.15" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <ellipse cx="175" cy="127" rx="62" ry="50" fill="none" stroke="#F7DF1E" stroke-width="0.6" opacity="0.12">
+    <animate attributeName="rx" values="58;75;58" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="ry" values="46;60;46" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.12;0.03;0.12" dur="4s" repeatCount="indefinite"/>
+  </ellipse>
+  <text x="430" y="200" font-family="'Courier New',monospace" font-size="12" fill="rgba(180,180,220,0.42)" text-anchor="middle" letter-spacing="3">MERN STACK  +  AI ENGINEERING BOOTCAMP  ·  WEEK 3</text>
+  <rect x="50" y="215" width="760" height="1" fill="url(#divGrad)"/>
+  <rect x="58" y="232" width="118" height="24" rx="12" fill="#F7DF1E" stroke="#F7DF1E" stroke-width="0.8"/>
+  <text x="117" y="248" font-family="'Courier New',monospace" font-size="10.5" font-weight="700" fill="#0a0900" text-anchor="middle">JavaScript ES2024</text>
+  <rect x="185" y="232" width="88" height="24" rx="12" fill="rgba(0,255,136,0.1)" stroke="rgba(0,255,136,0.28)" stroke-width="0.8"/>
+  <text x="229" y="248" font-family="'Courier New',monospace" font-size="10.5" font-weight="700" fill="#00ff88" text-anchor="middle">✓ Complete</text>
+  <rect x="280" y="232" width="148" height="24" rx="12" fill="rgba(147,112,255,0.12)" stroke="rgba(147,112,255,0.28)" stroke-width="0.8"/>
+  <text x="354" y="248" font-family="'Courier New',monospace" font-size="10.5" font-weight="700" fill="#c4a8ff" text-anchor="middle">Section A · 30 Marks</text>
+  <rect x="428" y="232" width="68" height="24" rx="12" fill="rgba(255,90,90,0.1)" stroke="rgba(255,90,90,0.25)" stroke-width="0.8"/>
+  <text x="462" y="248" font-family="'Courier New',monospace" font-size="10.5" font-weight="700" fill="#ff9090" text-anchor="middle">Week 3</text>
+  <rect x="510" y="232" width="138" height="24" rx="12" fill="rgba(80,180,255,0.1)" stroke="rgba(80,180,255,0.25)" stroke-width="0.8"/>
+  <text x="579" y="248" font-family="'Courier New',monospace" font-size="10.5" font-weight="700" fill="#80d4ff" text-anchor="middle">MERN + AI Bootcamp</text>
+  <rect x="50" y="270" width="760" height="0.5" fill="rgba(255,255,255,0.06)"/>
+  <text x="430" y="288" font-family="'Courier New',monospace" font-size="9" fill="rgba(255,255,255,0.2)" text-anchor="middle" letter-spacing="3">SECTION A — INTERVIEW QUESTIONS</text>
+  <rect x="54" y="298" width="240" height="58" rx="10" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.07)" stroke-width="0.8"/>
+  <text x="66" y="314" font-family="'Courier New',monospace" font-size="9" font-weight="800" fill="rgba(247,223,30,0.55)" letter-spacing="1">A1</text>
+  <text x="66" y="329" font-family="'Courier New',monospace" font-size="11.5" font-weight="700" fill="rgba(255,255,255,0.82)">var / let / const</text>
+  <text x="66" y="343" font-family="'Courier New',monospace" font-size="9.5" fill="rgba(255,255,255,0.3)">Scope · Hoisting · TDZ</text>
+  <text x="284" y="314" font-family="'Courier New',monospace" font-size="9" fill="rgba(0,255,136,0.6)" text-anchor="end">5 pts</text>
+  <rect x="310" y="298" width="240" height="58" rx="10" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.07)" stroke-width="0.8"/>
+  <text x="322" y="314" font-family="'Courier New',monospace" font-size="9" font-weight="800" fill="rgba(247,223,30,0.55)" letter-spacing="1">A2</text>
+  <text x="322" y="329" font-family="'Courier New',monospace" font-size="11.5" font-weight="700" fill="rgba(255,255,255,0.82)">V8 Engine & Threading</text>
+  <text x="322" y="343" font-family="'Courier New',monospace" font-size="9.5" fill="rgba(255,255,255,0.3)">JIT · Event Loop · libuv</text>
+  <text x="540" y="314" font-family="'Courier New',monospace" font-size="9" fill="rgba(0,255,136,0.6)" text-anchor="end">5 pts</text>
+  <rect x="566" y="298" width="240" height="58" rx="10" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.07)" stroke-width="0.8"/>
+  <text x="578" y="314" font-family="'Courier New',monospace" font-size="9" font-weight="800" fill="rgba(247,223,30,0.55)" letter-spacing="1">A3</text>
+  <text x="578" y="329" font-family="'Courier New',monospace" font-size="11.5" font-weight="700" fill="rgba(255,255,255,0.82)">Data Types + Coercion</text>
+  <text x="578" y="343" font-family="'Courier New',monospace" font-size="9.5" fill="rgba(255,255,255,0.3)">8 Types · == vs ===</text>
+  <text x="796" y="314" font-family="'Courier New',monospace" font-size="9" fill="rgba(0,255,136,0.6)" text-anchor="end">5 pts</text>
+  <rect x="54" y="364" width="240" height="58" rx="10" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.07)" stroke-width="0.8"/>
+  <text x="66" y="380" font-family="'Courier New',monospace" font-size="9" font-weight="800" fill="rgba(247,223,30,0.55)" letter-spacing="1">A4</text>
+  <text x="66" y="395" font-family="'Courier New',monospace" font-size="11.5" font-weight="700" fill="rgba(255,255,255,0.82)">Primitive vs Non-Prim</text>
+  <text x="66" y="409" font-family="'Courier New',monospace" font-size="9.5" fill="rgba(255,255,255,0.3)">Stack · Heap · Memory</text>
+  <text x="284" y="380" font-family="'Courier New',monospace" font-size="9" fill="rgba(0,255,136,0.6)" text-anchor="end">5 pts</text>
+  <rect x="310" y="364" width="240" height="58" rx="10" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.07)" stroke-width="0.8"/>
+  <text x="322" y="380" font-family="'Courier New',monospace" font-size="9" font-weight="800" fill="rgba(247,223,30,0.55)" letter-spacing="1">A5</text>
+  <text x="322" y="395" font-family="'Courier New',monospace" font-size="11.5" font-weight="700" fill="rgba(255,255,255,0.82)">Pass by Value / Ref</text>
+  <text x="322" y="409" font-family="'Courier New',monospace" font-size="9.5" fill="rgba(255,255,255,0.3)">Mutation · Reassignment</text>
+  <text x="540" y="380" font-family="'Courier New',monospace" font-size="9" fill="rgba(0,255,136,0.6)" text-anchor="end">5 pts</text>
+  <rect x="566" y="364" width="240" height="58" rx="10" fill="rgba(255,255,255,0.025)" stroke="rgba(255,255,255,0.07)" stroke-width="0.8"/>
+  <text x="578" y="380" font-family="'Courier New',monospace" font-size="9" font-weight="800" fill="rgba(247,223,30,0.55)" letter-spacing="1">A6</text>
+  <text x="578" y="395" font-family="'Courier New',monospace" font-size="11.5" font-weight="700" fill="rgba(255,255,255,0.82)">Functions in JS</text>
+  <text x="578" y="409" font-family="'Courier New',monospace" font-size="9.5" fill="rgba(255,255,255,0.3)">Syntax · Hoisting · Return</text>
+  <text x="796" y="380" font-family="'Courier New',monospace" font-size="9" fill="rgba(0,255,136,0.6)" text-anchor="end">5 pts</text>
+  <rect x="0" y="428" width="860" height="52" fill="rgba(255,255,255,0.018)"/>
+  <rect x="0" y="428" width="860" height="0.5" fill="rgba(255,255,255,0.06)"/>
+  <rect x="28" y="438" width="32" height="32" rx="7" fill="#F7DF1E"/>
+  <text x="44" y="458" font-family="'Courier New',monospace" font-size="13" font-weight="900" fill="#0a0900" text-anchor="middle">JS</text>
+  <text x="70" y="449" font-family="'Courier New',monospace" font-size="12" font-weight="700" fill="rgba(255,255,255,0.72)">MERN Stack + AI Engineering Bootcamp</text>
+  <text x="70" y="463" font-family="'Courier New',monospace" font-size="9" fill="rgba(255,255,255,0.25)" letter-spacing="1">JAVASCRIPT FUNDAMENTALS · WEEK 3 · SECTION A</text>
+  <rect x="490" y="440" width="111" height="19" rx="9" fill="rgba(255,255,255,0)" stroke="rgba(255,255,255,0.09)" stroke-width="0.7"/>
+  <text x="545" y="453" font-family="'Courier New',monospace" font-size="9" fill="rgba(255,255,255,0.32)" text-anchor="middle">var/let/const</text>
+  <rect x="607" y="440" width="83" height="19" rx="9" fill="rgba(255,255,255,0)" stroke="rgba(255,255,255,0.09)" stroke-width="0.7"/>
+  <text x="648" y="453" font-family="'Courier New',monospace" font-size="9" fill="rgba(255,255,255,0.32)" text-anchor="middle">V8 Engine</text>
+  <rect x="696" y="440" width="76" height="19" rx="9" fill="rgba(255,255,255,0)" stroke="rgba(255,255,255,0.09)" stroke-width="0.7"/>
+  <text x="734" y="453" font-family="'Courier New',monospace" font-size="9" fill="rgba(255,255,255,0.32)" text-anchor="middle">Coercion</text>
+  <rect x="778" y="440" width="90" height="19" rx="9" fill="rgba(255,255,255,0)" stroke="rgba(255,255,255,0.09)" stroke-width="0.7"/>
+  <text x="823" y="453" font-family="'Courier New',monospace" font-size="9" fill="rgba(255,255,255,0.32)" text-anchor="middle">Heap/Stack</text>
+  <rect x="874" y="440" width="83" height="19" rx="9" fill="rgba(255,255,255,0)" stroke="rgba(255,255,255,0.09)" stroke-width="0.7"/>
+  <text x="915" y="453" font-family="'Courier New',monospace" font-size="9" fill="rgba(255,255,255,0.32)" text-anchor="middle">Functions</text>
+  <rect x="755" y="440" width="80" height="19" rx="9" fill="rgba(0,255,136,0.1)" stroke="rgba(0,255,136,0.28)" stroke-width="0.7"/>
+  <text x="795" y="453" font-family="'Courier New',monospace" font-size="9" font-weight="800" fill="#00ff88" text-anchor="middle">30 / 30 ✓</text>
+  <rect x="0" y="0" width="860" height="2.5" fill="url(#topBorder)"><animate attributeName="opacity" values="0.75;1;0.75" dur="3s" repeatCount="indefinite"/></rect>
+  <circle cx="822" cy="34" r="20" fill="rgba(147,112,255,0.08)" stroke="rgba(147,112,255,0.2)" stroke-width="0.5"/>
+  <text x="822" y="39" font-family="'Courier New',monospace" font-size="11" font-weight="900" fill="#c4a8ff" text-anchor="middle">JS</text>
+</g>
+<rect x="0.5" y="0.5" width="859" height="479" rx="21.5" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
 </svg>
