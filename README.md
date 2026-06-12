@@ -10,13 +10,19 @@
  ╚════╝ ╚══════╝    ╚═╝      ╚═════╝ ╚═╝  ╚═══╝╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝
 ```
 
+
 # JavaScript Fundamentals Assignment
 ### MERN Stack + AI Engineering Bootcamp — Week 3
 
-![JavaScript](https://img.shields.io/badge/JavaScript-ES2024-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+<div align="center">
+
+![JS](https://img.shields.io/badge/JavaScript-ES2024-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Status](https://img.shields.io/badge/Status-Complete-00D26A?style=for-the-badge)
 ![Marks](https://img.shields.io/badge/Section%20A-30%20Marks-7B61FF?style=for-the-badge)
 ![Week](https://img.shields.io/badge/Week-3-FF6B6B?style=for-the-badge)
+![Bootcamp](https://img.shields.io/badge/MERN%20Bootcamp-AI%20Engineering-63B3ED?style=for-the-badge)
+
+</div>
 
 </div>
 
@@ -1115,4 +1121,16 @@ console.log(validateUserAge(-5));         // { valid: false, message: 'Age must 
 ---
 
 **Built with curiosity, styled with intention — and understood every step of the way.**
+
+---
+
+---
+
+<div align="center">
+
+`var/let/const` · `V8 Engine` · `Type Coercion` · `Heap/Stack` · `Pass by Ref` · `Functions`
+
+**Section A — 30 / 30 ✓** · MERN Stack + AI Engineering Bootcamp · Week 3
+
+</div>
 
