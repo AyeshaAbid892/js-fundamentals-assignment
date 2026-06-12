@@ -10,6 +10,13 @@
  ╚════╝ ╚══════╝    ╚═╝      ╚═════╝ ╚═╝  ╚═══╝╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝
 ```
 
+<div align="center">
+
+![JS Fundamentals Header](./header.svg)
+
+</div>
+
+---
 
 # JavaScript Fundamentals Assignment
 ### MERN Stack + AI Engineering Bootcamp — Week 3
