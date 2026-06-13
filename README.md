@@ -1120,17 +1120,20 @@ console.log(validateUserAge(-5));         // { valid: false, message: 'Age must 
 
 ---
 
+
+
+
+<div align="center">
+
+![Footer](./footer.svg)
+
+---
+
 **Built with curiosity, styled with intention — and understood every step of the way.**
 
 ---
 
----
-
-<div align="center">
-
-`var/let/const` · `V8 Engine` · `Type Coercion` · `Heap/Stack` · `Pass by Ref` · `Functions`
-
-**Section A — 30 / 30 ✓** · MERN Stack + AI Engineering Bootcamp · Week 3
-
 </div>
+ 
+
 
