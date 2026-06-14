@@ -953,6 +953,10 @@ console.log(studentDelta.address.city); // "Islamabad"
 
 ## ① Passing a Primitive to a Function — Pass by Value
 
+>When working with primitives (Number, String, Boolean), JavaScript creates an independent copy of the value.<br>
+>The function operates on this local copy, leaving the original variable untouched outside the function scope.<br>
+>Memory Context: Primitives are stored directly in the Stack, making them easy to copy.
+
 ```javascript
 function tryToDouble(num) {
   num = num * 2;        // modifying the local copy
@@ -977,6 +981,8 @@ console.log('Outside function:', original); // 10 — unchanged ✅
 
 ## ② Passing an Object to a Function — Pass by Reference VALUE
 
+>When you pass an object to a function, you are not passing the actual object. Instead, you are passing a copy of the reference `(the memory address)`. Because both the original variable (gamer) and the function parameter `(player)` point to the exact same location in the Heap, any property modification is reflected globally.
+
 ```javascript
 function updateScore(player) {
   player.score = 999;    // mutating the object at the address
@@ -1000,7 +1006,12 @@ console.log(gamer.score); // 999 — CHANGED!
 
 ## ③ The Key Nuance — "Pass by Value of the Reference"
 
->JavaScript is **`NOT`** truly pass-by-reference like C++ `(where you pass a pointer to the pointer)`. In JS, you get a copy of the memory address — not a pointer to the variable itself.
+>JavaScript is` NOT` truly pass-by-reference. In C++, passing by reference allows a function to reassign the original variable's pointer. In JavaScript, you only have a copy of the address. This behavior is formally known as "`Call-by-Sharing`".
+
+### COMPILER FLOW IDENTIFICATION MATRIX:
+
+>`TRUE Pass-by-Reference:` The function receives a direct link to the caller's variable location. Reassigning the parameter changes the original variable.<br>
+>`JS "Call-by-Sharing":` The function receives a copy of the reference. It can look at the object and change its contents (mutate), but it cannot change the caller's variable itself.
 
 ### COMPILER FLOW IDENTIFICATION MATRIX:
 
@@ -1018,6 +1029,8 @@ Arg-Copy Pointer (0x7A3F) ──┘
 ---
 
 ## ④ Proof — Reassigning the Object Inside Function Does NOT Change Original
+
+>Since the function only holds a copy of the reference, assigning it to a new object creates a new pointer in the function's local scope. The original variable remains anchored to its old memory address.
 
 ```javascript
 function tryToReplaceObject(obj) {
@@ -1040,6 +1053,10 @@ console.log('Outside:', hero.name);   // "Original Hero" — untouched ✅
 ---
 
 ## ⑤ Mutation vs Reassignment — Both Cases Side by Side
+
+>`Mutation (obj.prop = value):` Changes the data inside the Heap; affects the original.<br>
+>`Reassignment (obj = newValue):` Changes the local reference only; does NOT affect the original.<br>
+>Professional Pattern (Pure Functions): To avoid side effects, always return a new object using the spread operator instead of mutating the input.
 
 ```javascript
 // CASE 1: Mutation — DOES affect original
@@ -1095,7 +1112,7 @@ console.log(updated.score); // 95 ← new object ✅
 
 ### 🧠 The One-Line Summary
 
-A function is a reusable, named block of code that solves a specific sub-problem. Function declarations are fully hoisted (callable before definition), take parameters (input), and return a value (`undefined` by default if no `return`).
+>A function is a reusable, named block of code that solves a specific sub-problem. Function declarations are fully hoisted (callable before definition), take parameters (input), and return a value (`undefined` by default if no `return`).
 
 ---
 
