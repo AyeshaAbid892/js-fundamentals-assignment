@@ -748,7 +748,8 @@ function initializeContext(configuration) {
 ## **`Visual Reference`**
 
 
-<img width="640" height="480" alt="image" src="https://github.com/user-attachments/assets/a96ce4ac-e95c-4443-8b6d-517530066c9c" />
+<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/3f776b28-4b43-4dba-842d-6b6497bccd85" />
+
 
 
 ---
