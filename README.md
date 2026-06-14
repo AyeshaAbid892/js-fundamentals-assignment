@@ -1,7 +1,9 @@
 
-
-
 <div align="center">
+
+
+# JavaScript Fundamentals Assignment
+
 
 ![JS Fundamentals Header](./header.svg)
 
@@ -11,7 +13,7 @@
 ---
 <div align="center">
      
-# JavaScript Fundamentals Assignment
+
 ### MERN Stack + AI Engineering Bootcamp — Week 3
 
 <div align="center">
@@ -49,21 +51,23 @@
 
 <br>
 
-## A1: var / let / const
+## `Question 1: `
+
+## What is the difference between var, let, and const in JavaScript?
 
 > **Interview Question:** *What is the difference between var, let, and const in JavaScript?*
 
 <br>
 
-### 🧠 The One-Line Summary
+## 🧠 The One-Line Summary
 
-`var` is the old, broken way. `let` is the modern mutable variable. `const` is the modern immutable binding. In professional code written after 2015, `var` has no place.
+>`var` is the old, broken way. `let` is the modern mutable variable. `const` is the modern immutable binding. In professional code written after 2015, `var` has no place.
 
 ---
 
-### ① Scope
+## ① Scope
 
-Scope defines **where a variable is visible and accessible** in your code.
+>Scope defines **where a variable is visible and accessible** in your code.
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -101,13 +105,15 @@ function testConst() {
 }
 ```
 
-**Why this matters:** `var`'s function scope is a notorious bug source. Imagine a loop variable bleeding into the rest of your function — that's a `var` problem. `let` and `const` respect `{ }` boundaries, making code predictable.
+### **Why this matters:** 
+
+>`var`'s function scope is a notorious bug source. Imagine a loop variable bleeding into the rest of your function — that's a `var` problem. `let` and `const` respect `{ }` boundaries, making code predictable.
 
 ---
 
-### ② Hoisting
+## ② Hoisting
 
-Hoisting is JavaScript's behaviour of **moving declarations to the top of their scope** before any code runs. The *declaration* moves up — but not the *initialisation*.
+> Hoisting is JavaScript's behaviour of **moving declarations to the top of their scope** before any code runs. The *declaration* moves up — but not the *initialisation*.
 
 ```
 ┌──────────────────────────────────────────────────────────────────┐
@@ -135,15 +141,17 @@ console.log(myLet);    // ❌ ReferenceError: Cannot access 'myLet' before initi
 let myLet = 'world';
 ```
 
-> **⚡ Critical Interview Trap:** Many candidates say *"let is NOT hoisted."* That is **wrong** and will cost you the job.
-> `let` IS hoisted — but it lands in the **Temporal Dead Zone (TDZ)**, not as `undefined`.
+### **⚡ Critical Interview Trap:**
+
+> Many candidates say *"let is NOT hoisted."* That is **wrong** and will cost you the job.<br>
+> `let` IS hoisted — but it lands in the **Temporal Dead Zone (TDZ)**, not as `undefined`.<br>
 > The engine knows `myLet` exists, it just refuses to let you touch it before the declaration line.
 
 ---
 
-### ③ Temporal Dead Zone (TDZ)
+## ③ Temporal Dead Zone (TDZ)
 
-The TDZ is the **period between the start of a block scope and the line where `let`/`const` is declared**. During this window, the variable exists in memory but accessing it throws a `ReferenceError`.
+>The TDZ is the **period between the start of a block scope and the line where `let`/`const` is declared**. During this window, the variable exists in memory but accessing it throws a `ReferenceError`.
 
 ```
 Timeline of a let/const variable in a block:
@@ -169,11 +177,11 @@ Timeline of a let/const variable in a block:
 }
 ```
 
-Only `let` and `const` have a TDZ. `var` does not — it initialises to `undefined` immediately.
+> Only `let` and `const` have a TDZ. `var` does not — it initialises to `undefined` immediately.
 
 ---
 
-### ④ Re-declaration and Re-assignment
+## ④ Re-declaration and Re-assignment
 
 ```
 ┌─────────────┬────────────────────┬────────────────────┐
@@ -206,11 +214,17 @@ const PI = 3;           // ❌ SyntaxError
 const user = { name: 'Ali', age: 25 };
 user.age = 26;          // ✅ Allowed — we're mutating the OBJECT, not rebinding the variable
 user = {};              // ❌ TypeError — this would rebind the variable
+
+// 💡 Advanced Depth: Re-assignment Immutability vs. Value Immutability
+// 'const' only guarantees that the variable pointer cannot be reassigned. 
+// If you need to make the object's properties completely immutable as well, use Object.freeze():
+Object.freeze(user);
+user.age = 27;          // ❌ Fails silently in sloppy mode, or throws a TypeError in Strict Mode
 ```
 
 ---
 
-### ⑤ Which one to use in modern JavaScript?
+## ⑤ Which one to use in modern JavaScript?
 
 ```
 Decision Tree:
@@ -241,27 +255,36 @@ for (let i = 0; i < 10; i++) {                  // loop counter — let
 }
 ```
 
-> **Professional rule:** Default to `const`. Only switch to `let` when you know the value must change. Never use `var`.
+### **Professional rule:**
+>  Default to `const`. Only switch to `let` when you know the value must change. Never use `var`.
+
+## **Visual Reference**
+
+
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/95162752-4bdf-491b-92d1-4f6ca4134bee" />
 
 ---
 
 <br>
 
-## A2: V8 Engine + Single-Threaded
+
+## `Question 2: `
+
+## What is the V8 engine? What does it mean that JavaScript is single-threaded?
 
 > **Interview Question:** *What is the V8 engine? What does it mean that JavaScript is single-threaded?*
 
 <br>
 
-### 🧠 The One-Line Summary
+## 🧠 The One-Line Summary
 
-V8 is Google's JavaScript engine that compiles JS directly to machine code. Single-threaded means JS has one call stack — it does one thing at a time, but uses the Event Loop to handle async work without blocking.
+>V8 is Google's JavaScript engine that compiles JS directly to machine code. Single-threaded means JS has one call stack — it does one thing at a time, but uses the Event Loop to handle async work without blocking.
 
 ---
 
-### ① What is V8?
+## ① What is V8?
 
-V8 is an **open-source JavaScript engine** built by Google, written in C++. It is the runtime that actually *executes* your JavaScript code.
+>V8 is an **open-source JavaScript engine** built by Google, written in C++. It is the runtime that actually *executes* your JavaScript code.
 
 ```
 Environments that use V8:
@@ -273,13 +296,14 @@ Environments that use V8:
 └────────────────────────────────────────────┘
 ```
 
-Before V8 (pre-2008), JavaScript was *interpreted* line-by-line — slow and unusable for complex apps. V8 changed everything by introducing **JIT compilation**.
+>Before V8 (pre-2008), JavaScript was *interpreted* line-by-line — slow and unusable for complex apps. V8 changed everything by introducing **JIT compilation**.
 
 ---
 
-### ② JIT (Just-In-Time) Compilation
+## ② JIT (Just-In-Time) Compilation
 
-JavaScript is not compiled ahead of time like C++ or Java. Instead, V8 compiles it **at runtime** — right as it's being executed. This is called Just-In-Time compilation.
+>JavaScript is not compiled ahead of time like C++ or Java. Instead, V8 compiles it **at runtime** — right as it's being executed. This is called Just-In-Time compilation.
+Instead of compiling code ahead-of-time (AOT) to disk, V8 reads, compiles, compiles again, and optimizes code dynamically during runtime execution.
 
 ```
 Traditional Interpreted (old JS engines):
@@ -296,14 +320,32 @@ Result: FAST ✅
 
 "Hot code" = functions called many times → V8 optimises them aggressively
 ```
+```
+THE V8 ENGINE PIPELINE:
+Source Code ──> [ Parser ] ──> Abstract Syntax Tree (AST)
+                                      │
+                                      ▼
+                             [ Ignition Interpreter ] ──> Generates Bytecode (Fast Start)
+                                      │
+                   Is this code block run frequently? ("Hot Code")
+                                      │
+                                      ├──> YES ──> [ TurboFan Compiler ] ──> Optimized Machine Code
+                                      │                                             │
+                                      └──> NO ──────────────────────────────────────┴──> CPU Execution
 
-In simple terms: V8 watches your code run, identifies which parts run frequently, and compiles those parts directly to machine code so the CPU can execute them at full speed.
+```
+
+### In simple terms:
+
+>`Parsing:` Source code is broken down into structured tokens and organized into an Abstract Syntax Tree (AST).<br>
+>`Interpretation (Ignition):` V8's interpreter, Ignition, immediately converts the AST into clean, optimized Bytecode. This allows the application to boot and run instantly without waiting for complete compilation.<br>
+>`Optimization (TurboFan):` As the application executes, a profiler thread monitors runtime statistics. If a block of code is invoked repeatedly, it is flagged as "Hot Code" and passed to V8's optimizing compiler, TurboFan. TurboFan compiles that bytecode directly into Highly-Optimized Native Machine Code that interfaces directly with the hardware CPU
 
 ---
 
-### ③ Single-Threaded — What it means
+## ③ Single-Threaded — What it means
 
-A **thread** is a sequence of instructions a CPU can execute. JavaScript has **exactly one thread** for executing code — one call stack, one thing happening at a time.
+> A **thread** is a sequence of instructions a CPU can execute. JavaScript has **exactly one thread** for executing code — one call stack, one thing happening at a time.
 
 ```
 SINGLE-THREADED:
@@ -320,7 +362,7 @@ SINGLE-THREADED:
 ──────────────────────────────────────────────
 ```
 
-This means **long-running code blocks everything**:
+>This means **long-running code blocks everything**:
 
 ```javascript
 // ❌ This freezes the browser for 3 seconds
@@ -333,11 +375,13 @@ function blockingTask() {
 
 ---
 
-### ④ How JS handles async tasks if it's single-threaded
+## ④ How JS handles async tasks if it's single-threaded
 
-This is the famous interview puzzle: *"If JS is single-threaded, how does `setTimeout` or `fetch` not block everything?"*
+>This is the famous interview puzzle: *"If JS is single-threaded, how does `setTimeout` or `fetch` not block everything?"*
 
-The answer: **JS doesn't handle async work — the environment does.**
+### `The answer: `
+
+>**JS doesn't handle async work — the environment does.**
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
@@ -365,37 +409,59 @@ The answer: **JS doesn't handle async work — the environment does.**
 
 ---
 
-### ⑤ The 5 Components — Explained
+## ⑤ The 5 Concurrency Components Explained
+
+>To illustrate the orchestration between the thread and the concurrency architecture, observe this standard execution scenario:
 
 ```javascript
 console.log('1. Start');
 
 setTimeout(() => {
-  console.log('3. setTimeout callback');
+  console.log('4. Timeout Callback (Macrotask)');
 }, 0);
+
+Promise.resolve().then(() => {
+  console.log('3. Promise Callback (Microtask)');
+});
 
 console.log('2. End');
 
-// Output:
+// Runtime Execution Output:
 // 1. Start
 // 2. End
-// 3. setTimeout callback   ← even with 0ms delay!
+// 3. Promise Callback (Microtask)
+// 4. Timeout Callback (Macrotask)
 ```
+## Why does the Promise callback print before the setTimeout callback, even with a 0ms delay? 
 
-**Why does "3" print last even with 0ms?**
+>The answer lies in how the Event Loop prioritizes the respective task queues once the Call Stack is empty:
+
+>**Why does "3" print last even with 0ms?**
 
 | Component | Role |
 |:---|:---|
-| **Call Stack** | Executes JS code one frame at a time (LIFO) |
-| **Web APIs** | Browser/Node handles timers, HTTP, DOM — outside JS thread |
-| **Callback Queue** | Completed async callbacks wait here |
-| **Event Loop** | Constantly checks: *"Is call stack empty? Push next callback."* |
-| **Microtask Queue** | Higher priority than callback queue — Promises go here |
+| **Call Stack** | A Last-In, First-Out (LIFO) mechanism that tracks and executes active synchronous function frames. |
+| **Web APIs** | Background worker threads provided by the host environment (Browser / Node.js) that handle timers, network requests, and I/O tasks outside the main JS thread.. |
+| **Macrotask Queue (Callback Queue)** | A low-priority First-In, First-Out (FIFO) queue that holds completed asynchronous system operations, such as setTimeout and DOM event handlers. |
+| **Event Loop** | A continuous runtime loop that monitors the main thread. If the Call Stack is empty, it completely flushes the Microtask Queue before processing the next item from the Macrotask Queue. |
+| **Microtask Queue** | A high-priority First-In, First-Out (FIFO) queue that holds pending Promise resolution callbacks and queueMicrotask operations. |
+<br>
 
-The `setTimeout` callback goes to Web APIs → then Callback Queue → Event Loop waits for Call Stack to be empty → *then* pushes it in. That's why it always prints last.
+>When` setTimeout` finishes its countdown in the Web API layer, its callback is placed into the Macrotask Queue. Meanwhile, the resolved Promise places its callback into the high-priority Microtask Queue. Because the Event Loop processes all microtasks before checking the macrotask queue, the Promise callback always fires first.
 
-> **Bonus interview answer:** *"Is Node.js single-threaded?"*
-> The JavaScript execution is single-threaded. But Node.js uses **libuv** (a C++ library) which has a thread pool for I/O operations. So file reads, network calls etc. happen in background threads — but your JS callback always runs on the single JS thread.
+## **Bonus interview answer:** *`"Is Node.js single-threaded?"`*<br>
+
+> The JavaScript execution is single-threaded. But Node.js uses **libuv** `(a C++ library)` which has a thread pool for I/O operations. So file reads, network calls etc. happen in background threads — but your JS callback always runs on the single JS thread.
+> The core engine thread that compiles and executes JavaScript code is strictly single-threaded. However, Node.js includes libuv, a multi-threaded C++ library that manages an internal Thread Pool `(typically defaulting to 4 worker threads)`.
+>When Node handles disk I/O `(fs)`, hashing operations `(crypto)`, or compression routines `(zlib)`, it offloads these complex tasks to background OS threads. Once complete, the results are placed on a queue where they return to JavaScript's single thread to execute their callbacks. This allows your application to scale efficiently without blocking the main event loop.
+
+
+## **Visual Reference**
+
+
+<img width="583" height="343" alt="image" src="https://github.com/user-attachments/assets/be3702a7-7621-4bf4-8930-f715a760a8e3" />
+
+
 
 ---
 
