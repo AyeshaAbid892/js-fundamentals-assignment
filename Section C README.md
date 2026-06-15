@@ -175,7 +175,8 @@ function addItem(cart, item) {
 ---
 ## `📸  Visual Reference `
 
-<img width="355" height="370" alt="image" src="https://github.com/user-attachments/assets/1b4f43c7-f13f-49ee-8546-aaa16587d924" />
+<img width="521" height="357" alt="image" src="https://github.com/user-attachments/assets/8722636c-d3e6-487a-8193-c500c7564b70" />
+
 
 ---
 
