@@ -97,9 +97,19 @@ console.log('Tab 2 total (cartBFixed):', cartBFixed.total);
 // ✅ OUTPUT → 152500
 
 // ✅ Fixed applyPromo — Pure Function (no mutation)
+/**
+ * Applies a discount to the cart immutably.
+ * @param {Object} cart - The original cart object.
+ * @param {number} discount - The amount to subtract.
+ * @returns {Object} A new cart object with the discount applied.
+ */
 function applyPromoFixed(cart, discount) {
-  // Returns a BRAND NEW object using spread.
-  // Original cart is never touched.
+  // Defensive check yahan add karein
+  if (!cart || typeof cart.total !== 'number') {
+    console.error("Error: Invalid cart provided");
+    return cart;
+  }
+
   return {
     ...cart,
     total: cart.total - discount,
@@ -126,14 +136,25 @@ console.log('promoApplied on original:', originalCartFixed.promoApplied);
 // Original cart is NEVER mutated.
 // ─────────────────────────────────────────────────────────────
 
+// ↓↓↓ Yahan JSDoc Comments add kardiye ↓↓↓
+/**
+ * Adds an item to the cart immutably.
+ * @param {Object} cart - The current cart object.
+ * @param {Object} item - The new item to add.
+ * @returns {Object} A new cart object with the item added.
+ */
 function addItem(cart, item) {
-  // ✅ Spread cart to new object
-  // ✅ Spread existing items array and append new item
-  // ✅ Add item.price to total
+  // ↓↓↓ Yahan Defensive Check add kardiye ↓↓↓
+  if (!cart || !Array.isArray(cart.items) || !item) {
+    console.error("Error: Invalid cart or item data");
+    return cart; // Agar data galat ho to original cart hi wapis bhej do
+  }
+
+  // Yahan aapka purana logic waise ka waisa hi hai
   return {
     ...cart,
     items: [...cart.items, item],
-    total: cart.total + item.price
+    total: cart.total + (item.price || 0)
   };
 }
 
