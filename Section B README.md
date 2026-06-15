@@ -1,6 +1,7 @@
+
 <div align="center">
 
-![Section B Footer](./footer_b.svg)
+![Section B Header](./header_b.svg)
 
 </div>
 
