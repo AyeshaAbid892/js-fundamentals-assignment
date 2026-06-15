@@ -1363,8 +1363,6 @@ console.log(validateUserAge(-5));         // { valid: false, message: 'Age must 
 ---
 
 
-
-
 <div align="center">
 
 ![Footer](./footer.svg)
