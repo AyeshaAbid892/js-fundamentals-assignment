@@ -67,6 +67,15 @@
 
 ## ① Scope
 
+>Scope determines the accessibility or visibility of a variable.<br>
+
+>`var:` Is Function-Scoped. It is only contained within the function it was declared in. If declared inside an if block or for loop, it "leaks" out and remains accessible outside that block.<br>
+>`let & const`: Are Block-Scoped. They are strictly confined to the immediate { } block in which they are defined. Once the block execution ends, the variables are destroyed.<br>
+
+### `Interview Tip:` 
+
+>When asked about scope, say: "Scope defines the lifetime and accessibility of a variable. var is function-scoped, which often leads to accidental data leakage. let and const introduce block-scoping, which provides much tighter control and makes code more predictable and bug-free."
+
 >Scope defines **where a variable is visible and accessible** in your code.
 
 ```
@@ -113,6 +122,11 @@ function testConst() {
 
 ## ② Hoisting
 
+>Hoisting is the mechanism where variable declarations are moved to the top of their scope by the JavaScript engine before code execution.<br>
+
+>`var:` The declaration is hoisted and initialized as undefined. You can access the variable before its definition without a crash (though it will return undefined).<br>
+>`let & const:` The declaration is hoisted, but not initialized. They enter the Temporal Dead Zone `(TDZ)`, and accessing them before the code reaches the declaration line results in a ReferenceError.
+
 > Hoisting is JavaScript's behaviour of **moving declarations to the top of their scope** before any code runs. The *declaration* moves up — but not the *initialisation*.
 
 ```
@@ -147,11 +161,17 @@ let myLet = 'world';
 > `let` IS hoisted — but it lands in the **Temporal Dead Zone (TDZ)**, not as `undefined`.<br>
 > The engine knows `myLet` exists, it just refuses to let you touch it before the declaration line.
 
+### Interview Tip: 
+
+>If the interviewer claims, "let is not hoisted," confidently correct them: "Actually, let and const are hoisted, but they remain in the Temporal Dead Zone until their initialization line is reached. This is a design choice to ensure cleaner, more reliable code."
+
 ---
 
 ## ③ Temporal Dead Zone (TDZ)
 
 >The TDZ is the **period between the start of a block scope and the line where `let`/`const` is declared**. During this window, the variable exists in memory but accessing it throws a `ReferenceError`.
+
+>The TDZ is the gap between the start of a scope and the variable's declaration line. During this phase, the variable exists in memory but cannot be accessed. Any attempt to touch it results in a ReferenceError.
 
 ```
 Timeline of a let/const variable in a block:
@@ -179,9 +199,20 @@ Timeline of a let/const variable in a block:
 
 > Only `let` and `const` have a TDZ. `var` does not — it initialises to `undefined` immediately.
 
+### Interview Tip: 
+
+>Always explain the "why": "The TDZ exists to catch errors early. It prevents the developer from using a variable before it has been formally defined, effectively enforcing good coding practices that var ignored."
+
 ---
 
 ## ④ Re-declaration and Re-assignment
+
+>`Re-declaration: `Declaring the same variable name again in the same scope (var x; var x;).<br>
+>`Re-assignment: `Updating the value of an existing variable (x = 5; x = 10;).<br>
+
+>`var:` Allows both re-declaration and re-assignment.<br>
+>`let:` Allows re-assignment but prohibits re-declaration in the same scope.<br>
+>`const:` Prohibits both re-declaration and re-assignment. Crucially, const objects are mutable—you can change their properties, but you cannot point the variable to a new object/value.
 
 ```
 ┌─────────────┬────────────────────┬────────────────────┐
@@ -220,11 +251,22 @@ user = {};              // ❌ TypeError — this would rebind the variable
 // If you need to make the object's properties completely immutable as well, use Object.freeze():
 Object.freeze(user);
 user.age = 27;          // ❌ Fails silently in sloppy mode, or throws a TypeError in Strict Mode
+
 ```
+
+### Interview Tip:
+
+>If asked about const objects, explain: "A const declaration creates an immutable binding, not an immutable value. You can still modify the internal structure of an object or array. If you need total immutability, you would use Object.freeze().
 
 ---
 
 ## ⑤ Which one to use in modern JavaScript?
+
+>In modern ES6+ development, var is considered obsolete. Using let and const ensures the code follows modern standards, minimizes scope-related bugs, and improves readability.<br>
+
+### Interview Tip: 
+
+>When asked which one to use, state your "Professional Default": "My rule of thumb is to use const by default. I only use let when I explicitly know the variable's value needs to be reassigned, such as in loop counters or state management. I never use var because its scoping behavior is unpredictable in large-scale applications."
 
 ```
 Decision Tree:
@@ -286,6 +328,8 @@ for (let i = 0; i < 10; i++) {                  // loop counter — let
 
 >V8 is an **open-source JavaScript engine** built by Google, written in C++. It is the runtime that actually *executes* your JavaScript code.
 
+>V8 is an open-source, high-performance JavaScript engine developed by Google, written in C++. It acts as the "runtime" that transforms your human-readable JavaScript code into machine code that your computer's CPU can actually execute. While it is most famous for powering Google Chrome, it is also the core engine behind `Node.js`,` Deno`, and `Electron `(which powers VS Code, Discord, and Slack).
+
 ```
 Environments that use V8:
 ┌────────────────────────────────────────────┐
@@ -304,6 +348,8 @@ Environments that use V8:
 
 >JavaScript is not compiled ahead of time like C++ or Java. Instead, V8 compiles it **at runtime** — right as it's being executed. This is called Just-In-Time compilation.
 Instead of compiling code ahead-of-time (AOT) to disk, V8 reads, compiles, compiles again, and optimizes code dynamically during runtime execution.
+
+>JIT `(Just-In-Time) `Compilation: Unlike traditional interpreters that read code `line-by-line (slow)` or compilers that compile everything before running (not dynamic enough for JS), V8 uses JIT. It compiles code on the fly while the application is running, optimizing "hot" functions (code that is called repeatedly) into highly optimized machine code.
 
 ```
 Traditional Interpreted (old JS engines):
@@ -341,11 +387,22 @@ Source Code ──> [ Parser ] ──> Abstract Syntax Tree (AST)
 >`Interpretation (Ignition):` V8's interpreter, Ignition, immediately converts the AST into clean, optimized Bytecode. This allows the application to boot and run instantly without waiting for complete compilation.<br>
 >`Optimization (TurboFan):` As the application executes, a profiler thread monitors runtime statistics. If a block of code is invoked repeatedly, it is flagged as "Hot Code" and passed to V8's optimizing compiler, TurboFan. TurboFan compiles that bytecode directly into Highly-Optimized Native Machine Code that interfaces directly with the hardware CPU
 
+
+### Interview Tip:
+
+>If asked why V8 is so fast, mention `TurboFan`. Explain that V8 doesn't just run code; it profiles it. When a function is "`hot`" (called many times), it is handed over to the TurboFan compiler to be optimized into ultra-fast machine code.
+
 ---
 
 ## ③ Single-Threaded — What it means
 
 > A **thread** is a sequence of instructions a CPU can execute. JavaScript has **exactly one thread** for executing code — one call stack, one thing happening at a time.
+
+>"`Single-threaded`" means JavaScript has only one Call Stack. It can only process one instruction at a time. It cannot do two things simultaneously on the main thread. If you run a heavy calculation, the entire page (or server) will freeze until that task completes.<br>
+
+>`The Misconception:` People often think JS cannot do async work because it is single-threaded. This is incorrect.
+
+>`The Reality:` JavaScript delegates heavy tasks (like timers, network requests, or file reading) to the environment (the browser or Node.js). Once those tasks are finished, the environment places the callback back into a queue to be handled by the main thread. 
 
 ```
 SINGLE-THREADED:
@@ -372,6 +429,9 @@ function blockingTask() {
   console.log('Done');                  // nothing else can run during this
 }
 ```
+### Interview Tip: 
+
+>When explaining this, say: "JavaScript is single-threaded in its execution of code, but the runtime environment (Browser or Node.js) is multi-threaded. We use the Event Loop to coordinate between the single-threaded stack and the multi-threaded background APIs."
 
 ---
 
