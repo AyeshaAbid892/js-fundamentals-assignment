@@ -25,7 +25,17 @@
 // invalid → { valid: false, errors: ['msg1', 'msg2', ...] }
 // ─────────────────────────────────────────────────────────────
 
+/**
+ * Validates user registration data without mutation.
+ * @param {Object} data - The user registration object.
+ * @returns {Object} Validation result with user object or errors array.
+ */
 function validateUser(data) {
+  // ✅ Defensive Check: Agar data null, undefined ya object nahi hai
+  if (!data || typeof data !== 'object') {
+    return { valid: false, errors: ['Invalid input data provided'] };
+  }
+
   // ✅ PURE FUNCTION — we never modify `data` directly.
   // We collect all errors, then return. No nested if/else pyramids.
 
