@@ -85,16 +85,26 @@ function getGrade(average) {
 // - Uses const/let — no var
 // ─────────────────────────────────────────────────────────────
 
+// ✅ 1. Placement of JSDoc
+/**
+ * Generates a report of students immutably.
+ * @param {Array<Object>} students - Array of student objects.
+ * @returns {Array<Object>} New array containing report objects.
+ */
 function generateReport(students) {
-  // .map() creates a NEW array — original students array is untouched
+  // ✅ 2. Placement of  Guard Clause
+  if (!Array.isArray(students)) {
+    console.error("Invalid input: Expected an array of students");
+    return [];
+  }
+
+  // ✅ remain the same code
   return students.map((student) => {
     const average = getAverage(student.scores);
     const grade   = getGrade(average);
     const status  = student.present ? 'present' : 'absent';
-    // passed requires BOTH conditions: passing grade AND physical presence
     const passed  = average >= 60 && student.present === true;
 
-    // Return a NEW object — we do NOT modify the original student object
     return {
       name:    student.name,
       average: average,
@@ -114,12 +124,28 @@ function generateReport(students) {
 // - classAverage = average of all student averages (1 decimal)
 // ─────────────────────────────────────────────────────────────
 
+/**
+ * Generates a summary from the report.
+ * @param {Array<Object>} report - Array of report objects.
+ * @returns {Object} Summary object containing stats.
+ */
 function getSummary(report) {
+  // ✅ Defensive Guard: Prevent crash if report is empty or invalid
+  if (!Array.isArray(report) || report.length === 0) {
+    return { 
+      total: 0, 
+      passed: 0, 
+      failed: 0, 
+      topStudent: 'N/A', 
+      classAverage: 0 
+    };
+  }
+
   const total  = report.length;
   const passed = report.filter(r => r.passed).length;
   const failed = total - passed;
 
-  // Find top student using reduce — compare averages
+  // Find top student using reduce
   const topStudentObj = report.reduce((best, current) => {
     return current.average > best.average ? current : best;
   });
