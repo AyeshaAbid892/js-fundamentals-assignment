@@ -1,5 +1,42 @@
+<div align="center">
+
+![Section C Header](./header_c.svg)
+
+
+
+</div>
 
 ---
+<div align="center">
+
+### MERN Stack + AI Engineering Bootcamp — Week 3
+
+![JS](https://img.shields.io/badge/JavaScript-ES2024-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Status](https://img.shields.io/badge/Status-Complete-00D26A?style=for-the-badge)
+![Marks](https://img.shields.io/badge/Section%20C-30%20Marks-1D9E75?style=for-the-badge)
+![Week](https://img.shields.io/badge/Week-3-FF6B6B?style=for-the-badge)
+![Bootcamp](https://img.shields.io/badge/MERN%20Bootcamp-AI%20Engineering-63B3ED?style=for-the-badge)
+
+</div>
+
+---
+
+<div align="center">
+
+## 🧩 Table of Contents
+
+| # | File | Scenario | Concepts | Marks |
+|:---:|:---:|:---|:---|:---:|
+| [C1](#c1-e-commerce-shopping-cart-system) | `c1.js` | E-Commerce Shopping Cart System | var/let/const · Pass by Ref · Deep Copy · Functions | 10 |
+| [C2](#c2-user-registration-validator) | `c2.js` | User Registration Validator | Functions · Operators · Coercion · Data Types · Conditions | 10 |
+| [C3](#c3-student-grade-management-system) | `c3.js` | Student Grade Management System | All Concepts Combined — Immutability · Coercion · Functions | 10 |
+
+**Total Section C: 30 / 30 Marks**
+
+</div>
+
+---
+
 
 # Section C — Scenario-Based Problem Solving
 
@@ -685,5 +722,15 @@ if (!Array.isArray(students) || students.length === 0) {
 📧 Email: ayeshaa.abid33@gmail.com
 
 ---
+
+<div align="center">
+
+![Section C Footer](./footer_c.svg)
+
+</div>
+
+---
+
+
 
 
