@@ -16,12 +16,13 @@
 
 ### 🧩 Scenario Background
 
-You are building a shopping cart for an e-commerce website. A junior developer wrote the code below and pushed it to **production**. Customers are now reporting a critical bug: **changes made in one browser tab are showing up in another tab's cart.** Your job is to:
+>You are building a shopping cart for an e-commerce website. A junior developer wrote the code below and pushed it to **production**. Customers are now reporting a critical bug:
+>**changes made in one browser tab are showing up in another tab's cart.** Your job is to:
 
-1. Predict and explain the current buggy output
-2. Identify every bug with a precise explanation
-3. Rewrite a fully fixed version
-4. Add a pure `addItem()` function and prove it doesn't mutate the original
+>1. Predict and explain the current buggy output
+>2. Identify every bug with a precise explanation
+>3. Rewrite a fully fixed version
+>4. Add a pure `addItem()` function and prove it doesn't mutate the original
 
 ---
 
@@ -45,9 +46,13 @@ You are building a shopping cart for an e-commerce website. A junior developer w
 var cartB = cartA; // ❌ BUG
 ```
 
-**What is wrong:** This line does not create a new cart. It copies the **reference** (heap address) stored in `cartA` into `cartB`. After this line, `cartA === cartB` is `true` — they are literally the same object. Any property change via `cartB` will be visible through `cartA`.
+###  **What is wrong:** 
 
-**Why it matters:** The developer *intended* to create an independent copy for Tab 2. Instead, both tabs share one cart object in memory.
+>This line does not create a new cart. It copies the **reference** (heap address) stored in `cartA` into `cartB`. After this line, `cartA === cartB` is `true` — they are literally the same object. Any property change via `cartB` will be visible through `cartA`.
+
+###  **Why it matters:** 
+
+>The developer *intended* to create an independent copy for Tab 2. Instead, both tabs share one cart object in memory.
 
 ---
 
@@ -57,7 +62,9 @@ var cartB = cartA; // ❌ BUG
 cartB.items.push({ name: 'Mouse', price: 2500 }); // ❌ BUG
 ```
 
-**What is wrong:** Even if you had used a shallow spread `{ ...cartA }`, the `items` array would still be shared — because spread only copies one level deep. `.push()` mutates the array in-place. Since `cartA.items` and `cartB.items` point to the same array, Tab 1's cart is silently corrupted.
+### **What is wrong:**
+
+>Even if you had used a shallow spread `{ ...cartA }`, the `items` array would still be shared — because spread only copies one level deep. `.push()` mutates the array in-place. Since `cartA.items` and `cartB.items` point to the same array, Tab 1's cart is silently corrupted.
 
 ---
 
@@ -67,7 +74,9 @@ cartB.items.push({ name: 'Mouse', price: 2500 }); // ❌ BUG
 cartB.total = cartB.total + 2500; // ❌ BUG
 ```
 
-**What is wrong:** Same shared reference issue. Writing to `cartB.total` is writing to `cartA.total`.
+###  **What is wrong:** 
+
+>Same shared reference issue. Writing to `cartB.total` is writing to `cartA.total`.
 
 ---
 
@@ -81,7 +90,9 @@ function applyPromo(cart, discount) {
 }
 ```
 
-**What is wrong:** Objects in JavaScript are passed by reference (technically: *the reference is passed by value*). Inside `applyPromo`, `cart` holds the same memory address as `originalCart`. Mutating `cart.total` permanently changes `originalCart.total`. The function also adds a `promoApplied` property to the original cart, which it should never touch.
+###  **What is wrong:**
+
+>Objects in JavaScript are passed by reference (technically: *the reference is passed by value*). Inside `applyPromo`, `cart` holds the same memory address as `originalCart`. Mutating `cart.total` permanently changes `originalCart.total`. The function also adds a `promoApplied` property to the original cart, which it should never touch.
 
 ---
 
@@ -92,7 +103,10 @@ var cartA = ...  // ❌ var is function-scoped, not block-scoped
 var cartB = ...  // ❌ allows accidental re-declaration
 ```
 
-**What is wrong:** `var` has **function scope** and allows re-declaration in the same scope — two major sources of bugs in larger codebases. Modern JS requires `const` for values that don't change and `let` for values that need reassignment.
+
+###  **What is wrong:** 
+
+>`var` has **function scope** and allows re-declaration in the same scope — two major sources of bugs in larger codebases. Modern JS requires `const` for values that don't change and `let` for values that need reassignment.
 
 ---
 
@@ -106,7 +120,7 @@ var cartB = ...  // ❌ allows accidental re-declaration
 | `applyPromo` mutates original | Return `{ ...cart, total: ..., promoApplied: true }` |
 | `var` throughout | Replace with `const` / `let` |
 
-**Why `structuredClone()` and not spread `{...cartA}`?**
+###  **Why `structuredClone()` and not spread `{...cartA}`?**
 
 ```
 Shallow spread:       { ...cartA }
@@ -137,7 +151,7 @@ function applyPromoFixed(cart, discount) {
 }
 ```
 
-The original `cart` is **never touched**. A brand new object is created and returned.
+> The original `cart` is **never touched**. A brand new object is created and returned.
 
 ## 📝 Technical Documentation & Best Practices
 
@@ -218,14 +232,15 @@ function addItem(cart, item) {
 
 ### 🧩 Scenario Background
 
-You are building the **backend validation layer** for a user registration form. Data arrives from the frontend and may be messy — strings where numbers are expected, missing fields, invalid formats, or unrecognized roles.
+>You are building the **backend validation layer** for a user registration form. Data arrives from the frontend and may be messy — strings where numbers are expected, missing fields, invalid formats, or unrecognized roles.
 
-Your task is to build a **robust `validateUser(data)` function** that:
-- Handles all edge cases without crashing
-- Returns detailed error messages when validation fails
-- Returns a clean, normalized user object when all rules pass
-- Never mutates the input `data` object (pure function)
-- Uses no `var`, no nested `if/else` pyramids, and leverages JS type tools properly
+>Your task is to build a **robust `validateUser(data)` function** that:
+
+>- Handles all edge cases without crashing
+>- Returns detailed error messages when validation fails
+>- Returns a clean, normalized user object when all rules pass
+>- Never mutates the input `data` object (pure function)
+>- Uses no `var`, no nested `if/else` pyramids, and leverages JS type tools properly
 
 ---
 
@@ -237,10 +252,10 @@ Your task is to build a **robust `validateUser(data)` function** that:
 typeof data.name !== 'string' || data.name.trim() === ''
 ```
 
-- Must be a **string** (reject numbers, booleans, objects)
-- Must not be **empty or whitespace-only**
-- `.trim()` removes leading/trailing spaces before checking
-- Error message: `'Name cannot be empty'`
+>- Must be a **string** (reject numbers, booleans, objects)
+>- Must not be **empty or whitespace-only**
+>- `.trim()` removes leading/trailing spaces before checking
+>- Error message: `'Name cannot be empty'`
 
 ---
 
@@ -250,11 +265,11 @@ typeof data.name !== 'string' || data.name.trim() === ''
 typeof data.email !== 'string' || !data.email.includes('@') || !data.email.includes('.')
 ```
 
-- Must be a **string**
-- Must contain `'@'` (presence of at-sign)
-- Must contain `'.'` (presence of dot)
-- Note: This is a basic format check — full regex-based email validation is beyond scope
-- Error message: `'Invalid email format'`
+>- Must be a **string**
+>- Must contain `'@'` (presence of at-sign)
+>- Must contain `'.'` (presence of dot)
+>- Note: This is a basic format check — full regex-based email validation is beyond scope
+>- Error message: `'Invalid email format'`
 
 ---
 
@@ -266,7 +281,7 @@ if (isNaN(coercedAge)) → error
 if (coercedAge < 13 || coercedAge > 120) → error
 ```
 
-**This rule is the most nuanced.** Age may arrive as a string from an HTML form:
+> **This rule is the most nuanced.** Age may arrive as a string from an HTML form:
 
 | Input | `Number(input)` | `isNaN(...)` | Action |
 |-------|----------------|-------------|--------|
@@ -276,9 +291,9 @@ if (coercedAge < 13 || coercedAge > 120) → error
 | `null` | `0` | `false` | ❌ Fails range check (0 < 13) |
 | `undefined` | `NaN` | `true` | ❌ Error |
 
-- We use `Number()` (explicit coercion), **not** `parseInt` or `parseFloat` as per assignment constraints
-- `isNaN()` checks if the coercion produced a valid number
-- Error messages: `'Age must be a valid number'` or `'Age must be between 13 and 120'`
+>- We use `Number()` (explicit coercion), **not** `parseInt` or `parseFloat` as per assignment constraints
+>- `isNaN()` checks if the coercion produced a valid number
+>- Error messages: `'Age must be a valid number'` or `'Age must be between 13 and 120'`
 
 ---
 
@@ -288,9 +303,9 @@ if (coercedAge < 13 || coercedAge > 120) → error
 typeof data.password !== 'string' || data.password.length < 8
 ```
 
-- Must be a **string**
-- Minimum **8 characters** length
-- Error message: `'Password must be at least 8 characters'`
+>- Must be a **string**
+>- Minimum **8 characters** length
+>- Error message: `'Password must be at least 8 characters'`
 
 ---
 
@@ -302,11 +317,11 @@ const allowedRoles = ['admin', 'editor', 'user'];
 if (!allowedRoles.includes(role)) → error
 ```
 
-- `??` is the **nullish coalescing operator** — it returns the right side only if the left side is `null` or `undefined`
-- If `role` is not provided → defaults to `'user'`
-- If provided, must be one of: `'admin'`, `'editor'`, `'user'`
-- An invalid role like `'adm'` (typo) triggers an error
-- Error message: `'Role must be one of: admin, editor, user'`
+>- `??` is the **nullish coalescing operator** — it returns the right side only if the left side is `null` or `undefined`
+>- If `role` is not provided → defaults to `'user'`
+>- If provided, must be one of: `'admin'`, `'editor'`, `'user'`
+>- An invalid role like `'adm'` (typo) triggers an error
+>- Error message: `'Role must be one of: admin, editor, user'`
 
 ---
 
@@ -314,7 +329,8 @@ if (!allowedRoles.includes(role)) → error
 
 **Why Guard Clauses + Error Array, Not Nested If/Else?**
 
-❌ Anti-pattern (deeply nested, hard to read, misses multiple errors):
+> ❌ Anti-pattern (deeply nested, hard to read, misses multiple errors):
+
 ```js
 if (name valid) {
   if (email valid) {
@@ -325,7 +341,8 @@ if (name valid) {
 } else { return error }
 ```
 
-✅ Our approach (flat, collects ALL errors, easy to extend):
+> ✅ Our approach (flat, collects ALL errors, easy to extend):
+
 ```js
 const errors = [];
 if (!nameValid) errors.push('...');
@@ -336,7 +353,7 @@ if (errors.length > 0) return { valid: false, errors };
 return { valid: true, user: { ...cleaned } };
 ```
 
-This approach is **production-standard**: it returns all errors at once so the user can fix everything in one go, rather than discovering failures one by one.
+> This approach is **production-standard**: it returns all errors at once so the user can fix everything in one go, rather than discovering failures one by one.
 
 ---
 ## 🛡️ Defensive Programming & Robustness
@@ -409,25 +426,31 @@ This approach is **production-standard**: it returns all errors at once so the u
 
 ### 🧩 Scenario Background
 
-You are building a **grade management system** for the bootcamp. You receive an array of student objects where:
-- Some scores are **strings** (coerce them)
-- Some scores are **null** (skip them, don't count toward average)
-- Some students have **empty score arrays** (average = 0)
-- Some students are **absent** (affect the `passed` field)
+>You are building a **grade management system** for the bootcamp. You receive an array of student objects where:
 
-You must build 4 functions that work together as a pipeline:
+
+>- Some scores are **strings** (coerce them)
+>- Some scores are **null** (skip them, don't count toward average)
+>- Some students have **empty score arrays** (average = 0)
+>- Some students are **absent** (affect the `passed` field)
+
+> You must build 4 functions that work together as a pipeline:
 
 ```
 students → generateReport() → report → getSummary()
 ```
 
-**Critical constraint:** The original `students` array must remain **completely unchanged** after all functions run. Immutability is tested explicitly.
+### **Critical constraint:**
+
+>The original `students` array must remain **completely unchanged** after all functions run. Immutability is tested explicitly.
 
 ---
 
 ### 🔧 Function 1: `getAverage(scores)`
 
-**What it does:** Computes the average of a mixed-type array (numbers, strings, nulls).
+### **What it does:** 
+
+>Computes the average of a mixed-type array (numbers, strings, nulls).
 
 **Step-by-step logic:**
 
@@ -455,17 +478,20 @@ Step 6: average = 290/4 = 72.5 → rounded to 72.5
 | `[70, 65, '80', 75]` | `'80'` coerced with `Number()` → `80` |
 | `[55, 'abc', 50]` | `Number('abc')` = `NaN` → skipped |
 
-**Why `Number()` and not `parseInt/parseFloat`?**
-- Assignment explicitly forbids `parseInt`/`parseFloat`
-- `Number('80')` → `80` ✅
-- `Number(null)` → `0` — but we skip null before this step
-- `Number('80abc')` → `NaN` — caught by `isNaN()` check
+###  **Why `Number()` and not `parseInt/parseFloat`?**
+
+>- Assignment explicitly forbids `parseInt`/`parseFloat`
+>- `Number('80')` → `80` ✅
+>- `Number(null)` → `0` — but we skip null before this step
+>- `Number('80abc')` → `NaN` — caught by `isNaN()` check
 
 ---
 
 ### 🔧 Function 2: `getGrade(average)`
 
-**What it does:** Maps a numeric average to a letter grade string.
+###  **What it does:**
+
+>Maps a numeric average to a letter grade string.
 
 ```
 90–100  →  'A+'
@@ -476,7 +502,7 @@ Step 6: average = 290/4 = 72.5 → rounded to 72.5
 < 50    →  'F'
 ```
 
-**Implementation uses cascading `if` statements** (most readable for grade ranges):
+> **Implementation uses cascading `if` statements** (most readable for grade ranges):
 
 ```js
 if (average >= 90) return 'A+';
@@ -484,20 +510,23 @@ if (average >= 80) return 'A';
 // ...
 ```
 
-Each condition is checked from highest to lowest. Once a condition matches, the function returns immediately. This is the **guard clause pattern** — no `else` needed.
+> Each condition is checked from highest to lowest. Once a condition matches, the function returns immediately. This is the **guard clause pattern** — no `else` needed.
 
-**Pure Function:** takes a number, returns a string. No side effects, no state mutation. Same input always produces same output.
+### **Pure Function:** 
+
+>takes a number, returns a string. No side effects, no state mutation. Same input always produces same output.
 
 ---
 
 ### 🔧 Function 3: `generateReport(students)`
 
-**What it does:** Transforms the `students` array into a `report` array.
+>**What it does:** Transforms the `students` array into a `report` array.
 
-**Why `.map()` is the right tool:**
-- `.map()` creates a **brand new array** — never modifies the original
-- Each element of `students` is processed through a callback
-- The callback returns a **new object** — the original student object is never written to
+###  **Why `.map()` is the right tool:**
+
+>- `.map()` creates a **brand new array** — never modifies the original
+>- Each element of `students` is processed through a callback
+>- The callback returns a **new object** — the original student object is never written to
 
 ```
 students[1] = { name: 'Sara', scores: [70, 65, '80', 75], present: true }
@@ -516,15 +545,17 @@ const passed = average >= 60 && student.present === true;
 | `average >= 60` | Student scored C or higher |
 | `student.present === true` | Student attended class |
 
-Both must be true. Ali has average 55.0 (D grade) AND is absent → `passed = false`. Even if he were present, D is below 60.
+>Both must be true. Ali has average 55.0 (D grade) AND is absent → `passed = false`. Even if he were present, D is below 60.
 
 ---
 
 ### 🔧 Function 4: `getSummary(report)`
 
-**What it does:** Aggregates the full report into key statistics.
+### **What it does:** 
 
-**Finding `topStudent` with `.reduce()`:**
+>Aggregates the full report into key statistics.
+
+### **Finding `topStudent` with `.reduce()`:**
 
 ```js
 const topStudentObj = report.reduce((best, current) => {
@@ -532,16 +563,16 @@ const topStudentObj = report.reduce((best, current) => {
 });
 ```
 
-`.reduce()` walks through the array, comparing each student's average against the running `best`. At the end, `best` holds the student with the highest average.
+>`.reduce()` walks through the array, comparing each student's average against the running `best`. At the end, `best` holds the student with the highest average.
 
-**Calculating `classAverage`:**
+### **Calculating `classAverage`:**
 
 ```js
 const sumOfAverages = report.reduce((acc, r) => acc + r.average, 0);
 const classAverage  = Math.round((sumOfAverages / total) * 10) / 10;
 ```
 
-Sum all averages → divide by total count → round to 1 decimal.
+>Sum all averages → divide by total count → round to 1 decimal.
 
 ---
 
@@ -570,7 +601,7 @@ Sum all averages → divide by total count → round to 1 decimal.
 
 ### 🛡️ Immutability Proof
 
-After `generateReport(students)` runs:
+> After `generateReport(students)` runs:
 
 ```js
 console.log(students[1].scores);         // → [70, 65, '80', 75]  ← '80' still a string ✅
@@ -578,7 +609,7 @@ console.log(students[2].scores);         // → [55, 60, 50, null]  ← null sti
 console.log(students[0].average);        // → undefined            ← no .average added ✅
 ```
 
-The original student objects have **no new properties**, **no modified values**, **no removed elements**. `.map()` with a new return object guarantees this.
+>The original student objects have **no new properties**, **no modified values**, **no removed elements**. `.map()` with a new return object guarantees this.
 
 ---
 
