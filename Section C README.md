@@ -337,9 +337,11 @@ This approach is **production-standard**: it returns all errors at once so the u
 ---
 ## `📸  Visual Reference `
 
-<img width="424" height="410" alt="image" src="https://github.com/user-attachments/assets/c5e35851-e683-4ebc-bfb0-1103ffc0aa86" /> <br>
+<img width="560" height="409" alt="image" src="https://github.com/user-attachments/assets/4706d347-74af-4327-9e93-f7a2a334f058" />
 
-<img width="424" height="375" alt="image" src="https://github.com/user-attachments/assets/8512184e-ef4e-4e06-8b8f-88b8a686e244" />
+
+<img width="560" height="375" alt="image" src="https://github.com/user-attachments/assets/d6d10d7e-442b-43dc-9255-e58de8c01837" />
+
 
 ---
 
